@@ -37,12 +37,6 @@ export const page500 = {
   component: () => import('@/views/error-page/500.vue')
 }
 
-export const preview = {
-  path: '/preview',
-  name: 'preview',
-  component: () => import('@/views/form/article-publish/preview.vue')
-}
-
 export const locking = {
   path: '/locking',
   name: 'locking',
@@ -94,24 +88,24 @@ export const appRouter = [
     component: Main,
     children: [
       {
-        path: 'index',
+        path: 'price',
         title: '活动价格',
         name: 'activity-price',
         access: 0,
         component: () => import('@/views/activity/activity-price.vue')
       }, {
-        path: 'index',
+        path: 'type',
         title: '活动类型',
         name: 'activity-type',
         access: 0,
         component: () => import('@/views/activity/activity-type.vue')
       }, {
-        path: 'index',
+        path: 'list',
         title: '活动列表',
         name: 'activity-list',
         access: 0,
         component: () => import('@/views/activity/activity-list.vue')
-      },]
+      }]
   },
   {
     path: '/order-manage',
@@ -186,7 +180,6 @@ export const appRouter = [
 export const routers = [
   loginRouter,
   otherRouter,
-  preview,
   locking,
   ...appRouter,
   page500,

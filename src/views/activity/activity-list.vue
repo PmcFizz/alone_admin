@@ -1,16 +1,131 @@
 <template>
-    <div>
-    </div>
+    <Row>
+        <Col span="16">
+        <Card :bordered="false">
+            <p slot="title">活动列表</p>
+            <p style="margin-bottom: 10px">
+                <Button type="primary" size="small">新增</Button>
+            </p>
+            <Table :columns="columns1" :data="data1"></Table>
+            <div style="margin: 10px;overflow: hidden">
+                <div style="float: right;">
+                    <Page :total="100" :current="1" @on-change="changePage"></Page>
+                </div>
+            </div>
+        </Card>
+        </Col>
+    </Row>
 </template>
 
 <script>
   export default {
-    name: 'home',
+    name: 'activity-price',
     components: {},
     data () {
-      return {};
+      return {
+        columns1: [
+          {
+            title: '活动编号',
+            key: 'age'
+          },
+          {
+            title: '活动类型',
+            key: 'age'
+          },
+          {
+            title: '活动名称',
+            key: 'age'
+          },
+          {
+            title: '活动时间',
+            key: 'age'
+          },
+          {
+            title: '报名人数',
+            key: 'age'
+          },
+          {
+            title: '创建人',
+            key: 'age'
+          },
+          {
+            title: '更新时间',
+            key: 'age'
+          },
+          {
+            title: '状态',
+            key: 'age'
+          },
+          {
+            title: '操作',
+            key: 'age',
+            width: 150,
+            align: 'center',
+            render: (h, params) => {
+              return h('div', [
+                h('Button', {
+                  props: {
+                    type: 'primary',
+                    size: 'small'
+                  },
+                  style: {
+                    marginRight: '5px'
+                  },
+                  on: {
+                    click: () => {
+                      this.show(params.index)
+                    }
+                  }
+                }, '查看'),
+                h('Button', {
+                  props: {
+                    type: 'primary',
+                    size: 'small'
+                  },
+                  style: {
+                    marginRight: '5px'
+                  },
+                  on: {
+                    click: () => {
+                      this.show(params.index)
+                    }
+                  }
+                }, '更新')
+              ]);
+            }
+          }
+        ],
+        data1: [
+          {
+            name: 'John Brown',
+            age: 18,
+            address: 'New York No. 1 Lake Park',
+            date: '2016-10-03'
+          },
+          {
+            name: 'Jim Green',
+            age: 24,
+            address: 'London No. 1 Lake Park',
+            date: '2016-10-01'
+          },
+          {
+            name: 'Joe Black',
+            age: 30,
+            address: 'Sydney No. 1 Lake Park',
+            date: '2016-10-02'
+          },
+          {
+            name: 'Jon Snow',
+            age: 26,
+            address: 'Ottawa No. 2 Lake Park',
+            date: '2016-10-04'
+          }
+        ]
+      }
     },
     computed: {},
-    methods: {}
+    methods: {
+      changePage(val){}
+    }
   };
 </script>

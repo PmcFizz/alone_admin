@@ -1,11 +1,12 @@
 <template>
     <div>
+        物资管理暂时不做
     </div>
 </template>
 
 <script>
   export default {
-    name: 'home',
+    name: 'good-list',
     components: {},
     data () {
       return {};
