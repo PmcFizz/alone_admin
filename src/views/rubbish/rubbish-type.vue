@@ -4,7 +4,7 @@
         <Card :bordered="false">
             <p slot="title">垃圾分类</p>
             <p style="margin-bottom: 10px">
-                <Button type="primary" size="small">新增</Button>
+                <Button type="primary" @click="clickCreate" size="small">新增</Button>
             </p>
             <Table :columns="columns1" :data="data1"></Table>
             <div style="margin: 10px;overflow: hidden">
@@ -14,6 +14,35 @@
             </div>
         </Card>
         </Col>
+        <Modal
+                v-model="showEditModal"
+                title="新建/更新垃圾分类"
+                @on-ok="saveData"
+                @on-cancel="cancelUpdate">
+            <Form :label-width="80">
+                <FormItem label="名称：">
+                    <Input v-model="rubbishType.name" placeholder="请输入名称"></Input>
+                </FormItem>
+                <FormItem label="图标：">
+                    <Input v-model="rubbishType.name" placeholder="请输入名称"></Input>
+                </FormItem>
+                <FormItem label="说明：">
+                    <Input v-model="rubbishType.name" type="textarea"
+                           :autosize="{minRows: 2,maxRows: 5}" placeholder="请输入名称"></Input>
+                </FormItem>
+                <FormItem label="位置：">
+                    <Select v-model="rubbishType.name" style="width:200px">
+                        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                    </Select>
+
+                </FormItem>
+                <FormItem label="相对于：">
+                    <Select v-model="rubbishType.name" style="width:200px">
+                        <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                    </Select>
+                </FormItem>
+            </Form>
+        </Modal>
     </Row>
 </template>
 
@@ -49,7 +78,7 @@
                   },
                   on: {
                     click: () => {
-                      this.show(params.index)
+                      this.clickUpdate(params.index)
                     }
                   }
                 }, '更新')
@@ -82,12 +111,42 @@
             address: 'Ottawa No. 2 Lake Park',
             date: '2016-10-04'
           }
-        ]
+        ],
+        showEditModal: false,
+        rubbishType: {},
+        cityList: [{
+          value: 'New York',
+          label: 'New York'
+        },
+          {
+            value: 'London',
+            label: 'London'
+          },
+          {
+            value: 'Sydney',
+            label: 'Sydney'
+          },
+          {
+            value: 'Ottawa',
+            label: 'Ottawa'
+          }]
       }
     },
     computed: {},
     methods: {
-      changePage(val){}
+      changePage(val){},
+      saveData(){
+        this.showEditModal = false
+      },
+      cancelUpdate(){
+        this.showEditModal = false
+      },
+      clickCreate(){
+        this.showEditModal = true
+      },
+      clickUpdate(){
+        this.showEditModal = true
+      },
     }
   };
 </script>
