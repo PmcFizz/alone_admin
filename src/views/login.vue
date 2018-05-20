@@ -68,18 +68,18 @@
       handleSubmit () {
         this.$refs.loginForm.validate((valid) => {
           if (valid) {
-            userLogin({account: this.form.userName, password: this.form.password}).then(res => {
-              if (res.status === 200) {
+//            userLogin({account: this.form.userName, password: this.form.password}).then(res => {
+//              if (res.status === 200) {
                 Cookies.set('user', this.form.userName);
                 Cookies.set('password', this.form.password);
                 Cookies.set('access', 0);
                 this.$router.push({
                   name: 'member'
                 });
-              } else {
-                this.$Message.error(res.data);
-              }
-            })
+//              } else {
+//                this.$Message.error(res.data);
+//              }
+//            })
           }
         });
       }

@@ -2,10 +2,30 @@
     <Row>
         <Col span="16">
         <Card :bordered="false">
-            <p slot="title">活动价格</p>
-            <p style="margin-bottom: 10px">
-                <Button type="primary" size="small" @click="clickCreate">新增</Button>
-            </p>
+            <p slot="title">活动审核</p>
+            <Form :label-width="100" style="margin-top: 20px">
+                <Row>
+                    <Col span="6">
+                    <FormItem label="">
+                        <Input v-model="searchData.keyword"
+                               placeholder="活动编号,活动名称,"></Input>
+                    </FormItem>
+                    </Col>
+                    <Col span="6">
+                    <FormItem label="状态">
+                        <Select v-model="searchData.type" style="width:200px">
+                            <Option v-for="item in statusArr" :value="item.value" :key="item.value">
+                                {{ item.name }}
+                            </Option>
+                        </Select>
+                    </FormItem>
+                    </Col>
+                    <Col span="6" style="text-align: center">
+                    <Button type="primary" @click="queryData" size="small">查询</Button>
+                    <Button type="primary" @click="clickCreate" size="small">审核</Button>
+                    </Col>
+                </Row>
+            </Form>
             <Table :columns="columns1" :data="data1"></Table>
             <div style="margin: 10px;overflow: hidden">
                 <div style="float: right;">
@@ -20,7 +40,7 @@
                 title="新建/更新活动价格"
                 @on-ok="saveData"
                 @on-cancel="cancelUpdate">
-            <Form  :label-width="120">
+            <Form :label-width="120">
                 <FormItem label="编号：">
                     <Input v-model="activityPrice.input" placeholder="编号，不可重复，请使用字母命名。"></Input>
                 </FormItem>
@@ -46,14 +66,12 @@
                 </FormItem>
             </Form>
         </Modal>
-
-
     </Row>
 </template>
 
 <script>
   export default {
-    name: 'activity-price',
+    name: 'activity-audit',
     components: {},
     data () {
       return {
@@ -130,7 +148,11 @@
           }
         ],
         showEditModal: false,
-        activityPrice:{}
+        activityPrice: {},
+        searchData: {},
+        statusArr: [{name: '全部', value: 1}, {name: '未发布', value: 2},
+          {name: '已发布', value: '3'},
+          {name: '已撤回', value: '4'}],
       }
     },
     computed: {},

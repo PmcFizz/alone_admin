@@ -16,13 +16,6 @@
                         <Select v-model="searchData.type" style="width:200px">
                             <Option v-for="item in typeArr" :value="item.value" :key="item.value">
                                 {{ item.name }}
-
-
-
-
-
-
-
                             </Option>
                         </Select>
                     </FormItem>
@@ -32,13 +25,6 @@
                         <Select v-model="searchData.type" style="width:200px">
                             <Option v-for="item in statusArr" :value="item.value" :key="item.value">
                                 {{ item.name }}
-
-
-
-
-
-
-
                             </Option>
                         </Select>
                     </FormItem>

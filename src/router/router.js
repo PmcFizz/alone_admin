@@ -115,7 +115,7 @@ export const appRouter = [
     access: 0,
     component: Main,
     children: [
-      {path: 'index', title: '活动审核', name: 'activity-audit', component: () => import('@/views/home/home.vue')}
+      {path: 'index', title: '活动审核', name: 'activity-audit', component: () => import('@/views/activity/activity-audit')}
     ]
   },
   {
