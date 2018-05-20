@@ -3,10 +3,56 @@
         <Col span="16">
         <Card :bordered="false">
             <p slot="title">活动列表</p>
+            <Form :label-width="100" style="margin-top: 20px">
+                <Row>
+                    <Col span="6">
+                    <FormItem label="">
+                        <Input v-model="searchData.keyword"
+                               placeholder="活动编号,活动名称,"></Input>
+                    </FormItem>
+                    </Col>
+                    <Col span="6">
+                    <FormItem label="活动类型">
+                        <Select v-model="searchData.type" style="width:200px">
+                            <Option v-for="item in typeArr" :value="item.value" :key="item.value">
+                                {{ item.name }}
+
+
+
+
+
+
+
+                            </Option>
+                        </Select>
+                    </FormItem>
+                    </Col>
+                    <Col span="6">
+                    <FormItem label="状态">
+                        <Select v-model="searchData.type" style="width:200px">
+                            <Option v-for="item in statusArr" :value="item.value" :key="item.value">
+                                {{ item.name }}
+
+
+
+
+
+
+
+                            </Option>
+                        </Select>
+                    </FormItem>
+                    </Col>
+                    <Col span="6" style="text-align: center">
+                    <Button type="primary" @click="queryData" size="small">查询</Button>
+                    <Button type="primary" @click="clickCreate" size="small">新增</Button>
+                    <Button type="primary" @click="createQrCode" size="small">生成并查看二维码</Button>
+                    </Col>
+                </Row>
+            </Form>
             <p style="margin-bottom: 10px">
-                <Button type="primary" @click="clickCreate" size="small">新增</Button>
             </p>
-            <Table :columns="columns1" :data="data1"></Table>
+            <Table :columns="columns1" :data="tableData"></Table>
             <div style="margin: 10px;overflow: hidden">
                 <div style="float: right;">
                     <Page :total="100" :current="1" @on-change="changePage"></Page>
@@ -235,6 +281,7 @@
 </template>
 
 <script>
+  import { getActivityDetailById, getActivityListByPage, createOneActivity } from '@/api/activity/activity'
   import activityUpload from '@/views/activity/activity-upload';
   export default {
     name: 'activity-price',
@@ -284,13 +331,8 @@
             render: (h, params) => {
               return h('div', [
                 h('Button', {
-                  props: {
-                    type: 'primary',
-                    size: 'small'
-                  },
-                  style: {
-                    marginRight: '5px'
-                  },
+                  props: {type: 'primary', size: 'small'},
+                  style: {marginRight: '5px'},
                   on: {
                     click: () => {
                       this.clickSee(params.index)
@@ -299,52 +341,74 @@
                 }, '查看'),
                 h('Button', {
                   props: {
-                    type: 'primary',
-                    size: 'small'
+                    type: 'primary', size: 'small'
                   },
-                  style: {
-                    marginRight: '5px'
-                  },
+                  style: {marginRight: '5px'},
                   on: {
                     click: () => {
                       this.clickUpdate(params.index)
                     }
                   }
-                }, '更新')
+                }, '修改'),
+                h('Button', {
+                  props: {type: 'primary', size: 'small'},
+                  style: {marginRight: '5px'},
+                  on: {
+                    click: () => {
+                      this.clickDelOne(params.index)
+                    }
+                  }
+                }, '删除'),
+                h('Button', {
+                  props: {type: 'primary', size: 'small'},
+                  style: {marginRight: '5px'},
+                  on: {
+                    click: () => {
+                      this.clickPush(params.index)
+                    }
+                  }
+                }, '发布'),
+                h('Button', {
+                  props: {type: 'primary', size: 'small'},
+                  style: {marginRight: '5px'},
+                  on: {
+                    click: () => {
+                      this.clickCopyCreate(params.index)
+                    }
+                  }
+                }, '复制创建'),
+                h('Button', {
+                  props: {type: 'primary', size: 'small'},
+                  style: {marginRight: '5px'},
+                  on: {
+                    click: () => {
+                      this.clickRecall(params.index)
+                    }
+                  }
+                }, '撤回')
               ]);
             }
           }
         ],
-        data1: [
-          {
-            name: 'John Brown',
-            age: 18,
-            address: 'New York No. 1 Lake Park',
-            date: '2016-10-03'
-          },
-          {
-            name: 'Jim Green',
-            age: 24,
-            address: 'London No. 1 Lake Park',
-            date: '2016-10-01'
-          },
-          {
-            name: 'Joe Black',
-            age: 30,
-            address: 'Sydney No. 1 Lake Park',
-            date: '2016-10-02'
-          },
-          {
-            name: 'Jon Snow',
-            age: 26,
-            address: 'Ottawa No. 2 Lake Park',
-            date: '2016-10-04'
-          }
-        ],
+        tableData: [],
         showEditModal: false,
         showDetailModal: false,
         activityInfo: {},
         activityDetail: {},
+        searchData: {
+          keyword: '',
+          type: '',
+          status: '',
+          pageNum: 1,
+          pageSize: 50
+        },
+        total: 0,
+        typeArr: [{name: '后台创建', value: 1}, {name: '会员常见', value: 2}, {name: '全部', value: ''}],
+        statusArr: [{name: '全部', value: 1}, {name: '未发布', value: 2},
+          {name: '已撤回', value: '3'},
+          {name: '未开始', value: '4'},
+          {name: '进行中', value: '5'},
+          {name: '已结束', value: '6'}],
         addressData: [{
           value: 'beijing',
           label: '北京',
@@ -389,7 +453,19 @@
       }
     },
     computed: {},
+    mounted(){
+      this.queryData()
+    },
     methods: {
+      queryData(){
+        getActivityListByPage(this.searchData).then(res => {
+          this.tableData = res.data.list
+          this.total = res.data.total
+        })
+      },
+      createQrCode(){
+
+      },
       changePage(val){},
       clickUpdate(index){
         this.showEditModal = true
@@ -408,6 +484,16 @@
       },
       clickCreate(){
         this.showEditModal = true
+      },
+      clickDelOne(index){
+
+      },
+      clickPush(index){
+
+      },
+      clickCopyCreate(index){},
+      clickRecall(index){
+
       }
     }
   };

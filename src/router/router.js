@@ -47,7 +47,7 @@ export const locking = {
 export const otherRouter = {
   path: '/',
   name: 'otherRouter',
-  redirect: '/home',
+  redirect: '/member-manage',
   component: Main,
   children: [
     {path: 'home', title: {i18n: 'home'}, name: 'home_index', component: () => import('@/views/home/home.vue')},
@@ -62,24 +62,18 @@ export const otherRouter = {
 
 // 作为Main组件的子页面展示并且在左侧菜单显示的路由写在appRouter里
 export const appRouter = [
-  {
-    path: '/',
-    icon: 'android-checkbox',
-    name: 'otherRouter',
-    redirect: '/home',
-    title: '首页',
-    access: 0,
-    component: Main,
-    children: [
-      {path: 'home', title: {i18n: 'home'}, name: 'home_index', component: () => import('@/views/home/home.vue')}
-      // {
-      //   path: 'ownspace',
-      //   title: '个人中心',
-      //   name: 'ownspace_index',
-      //   component: () => import('@/views/own-space/own-space.vue')
-      // }
-    ]
-  },
+  // {
+  //   path: '/',
+  //   icon: 'android-checkbox',
+  //   name: 'otherRouter',
+  //   redirect: '/home',
+  //   title: '首页',
+  //   access: 0,
+  //   component: Main,
+  //   children: [
+  //     {path: 'home', title: {i18n: 'home'}, name: 'home_index', component: () => import('@/views/home/home.vue')}
+  //   ]
+  // },
   {
     path: '/member-manage',
     icon: 'android-checkbox',
@@ -106,24 +100,23 @@ export const appRouter = [
     component: Main,
     children: [
       {
-        path: 'price',
-        title: '活动价格',
-        name: 'activity-price',
-        access: 0,
-        component: () => import('@/views/activity/activity-price.vue')
-      }, {
-        path: 'type',
-        title: '活动类型',
-        name: 'activity-type',
-        access: 0,
-        component: () => import('@/views/activity/activity-type.vue')
-      }, {
         path: 'list',
         title: '活动列表',
         name: 'activity-list',
         access: 0,
         component: () => import('@/views/activity/activity-list.vue')
       }]
+  },
+  {
+    path: '/activity-audit',
+    icon: 'android-checkbox',
+    name: 'audit',
+    title: '活动审核',
+    access: 0,
+    component: Main,
+    children: [
+      {path: 'index', title: '活动审核', name: 'activity-audit', component: () => import('@/views/home/home.vue')}
+    ]
   },
   {
     path: '/order-manage',
@@ -173,7 +166,7 @@ export const appRouter = [
         name: 'rubbish-sign',
         access: 0,
         component: () => import('@/views/rubbish/rubbish-sign.vue')
-      },
+      }
     ]
   },
   {

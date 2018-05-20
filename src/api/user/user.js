@@ -7,7 +7,7 @@ import $http from '../../server/index'
  * 用户登录
  * @param data
  */
-export const userLogin = (data) => $http.get('/base/getPorjectInfo', data)
+export const userLogin = (data) => $http.post('/login', data)
 
 /**
  * 用户退出

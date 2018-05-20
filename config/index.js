@@ -10,7 +10,7 @@ module.exports = {
     proxyTable: {
       //设置本地代理访问接口
       '/api': {
-        target: 'http://localhost:3000',//设置你调用的接口域名和端口号 别忘了加http
+        target: 'http://jianshi.free.ngrok.cc',//设置你调用的接口域名和端口号 别忘了加http
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/'

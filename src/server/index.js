@@ -24,10 +24,10 @@ export default ((url = '', data = {}) => {
           params: data,
           withCredentials: true
         }).then(function (response) {
-          if (response.data.code === 1101) {
+          if (response.data.status === 1101) {
             router.push({path: '/login'})
-          } else if (response.data.code === 200) {
-            resolve(response.data.data)
+          } else if (response.data.status === 200) {
+            resolve(response.data)
           } else {
             resolve(response.data)
           }
@@ -37,16 +37,16 @@ export default ((url = '', data = {}) => {
       })
     },
     post (url, data, upload = false) {
-      console.log(data)
       return new Promise((resolve, reject) => {
         axios.post(url, upload ? data : qs.stringify(data), {
           withCredentials: true,
           headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
         }).then(function (response) {
-          if (response.data.code === 1101) {
+          debugger
+          if (response.data.status === 1101) {
             router.push({path: '/login'})
-          } else if (response.data.code === 200) {
-            resolve(response.data.data)
+          } else if (response.data.status === 200) {
+            resolve(response.data)
           } else {
             resolve(response.data)
           }

@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54730fc3-2ba5-4738-ad84-970079dffc96" name="Default" comment="活动管理">
+    <list default="true" id="54730fc3-2ba5-4738-ad84-970079dffc96" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/webpack.base.config.js" afterPath="$PROJECT_DIR$/build/webpack.base.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/webpack.dev.config.js" afterPath="$PROJECT_DIR$/build/webpack.dev.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/webpack.prod.config.js" afterPath="$PROJECT_DIR$/build/webpack.prod.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/libs/util.js" afterPath="$PROJECT_DIR$/src/libs/util.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/locale/index.js" afterPath="$PROJECT_DIR$/src/locale/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/index.js" afterPath="$PROJECT_DIR$/config/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/user/user.js" afterPath="$PROJECT_DIR$/src/api/user/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/router/router.js" afterPath="$PROJECT_DIR$/src/router/router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/index.js" afterPath="$PROJECT_DIR$/src/server/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/activity/activity-list.vue" afterPath="$PROJECT_DIR$/src/views/activity/activity-list.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/login.vue" afterPath="$PROJECT_DIR$/src/views/login.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/rubbish/rubbish-type.vue" afterPath="$PROJECT_DIR$/src/views/rubbish/rubbish-type.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/member/member-manage.vue" afterPath="$PROJECT_DIR$/src/views/member/member-manage.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,31 +27,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/router/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1000">
-              <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="217">
+              <caret line="101" column="7" lean-forward="true" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
+              <folding>
+                <element signature="e#2383#2654#0" expanded="false" />
+                <element signature="e#2658#2950#0" expanded="false" />
+                <element signature="e#2954#3813#0" expanded="false" />
+                <element signature="e#3817#4128#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webpack.dev.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/webpack.dev.config.js">
+      <file leaf-file-name="member-manage.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/member/member-manage.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-              <folding />
+            <state relative-caret-position="398">
+              <caret line="199" column="14" lean-forward="true" selection-start-line="199" selection-start-column="14" selection-end-line="199" selection-end-column="14" />
+              <folding>
+                <element signature="n#style#0;n#Select#0;n#FormItem#1;n#Row#0;n#Form#0;n#Card#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#DatePicker#0;n#FormItem#2;n#Row#0;n#Form#0;n#Card#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#3;n#Row#0;n#Form#0;n#Card#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="e#4909#5898#0" expanded="false" />
+                <element signature="e#4921#4983#0" expanded="false" />
+                <element signature="e#4995#5063#0" expanded="false" />
+                <element signature="e#5075#5654#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+            <state relative-caret-position="225">
+              <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/home/home.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="35" column="35" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="35" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -61,18 +84,94 @@
       <file leaf-file-name="login.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/login.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-361">
-              <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+            <state relative-caret-position="139">
+              <caret line="67" column="23" lean-forward="true" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+              <folding>
+                <element signature="e#1531#1563#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity-list.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/activity/activity-list.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="464" column="8" lean-forward="true" selection-start-line="464" selection-start-column="8" selection-end-line="464" selection-end-column="8" />
+              <folding>
+                <element signature="n#style#0;n#Select#0;n#FormItem#1;n#Row#0;n#Form#0;n#Card#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Select#0;n#FormItem#2;n#Row#0;n#Form#0;n#Card#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#3;n#Row#0;n#Form#0;n#Card#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Row#0;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#DatePicker#0;n#FormItem#4;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Cascader#0;n#FormItem#5;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Input#0;n#FormItem#5;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Row#1;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Input#0;n#FormItem#1;n#Row#1;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Input#1;n#FormItem#1;n#Row#1;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Checkbox#0;n#Row#0;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Input#0;n#Checkbox#0;n#Row#0;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Checkbox#0;n#Row#1;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Input#0;n#Checkbox#0;n#Row#1;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Checkbox#0;n#Row#2;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Input#0;n#Checkbox#0;n#Row#2;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Input#0;n#Checkbox#0;n#Row#3;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#0;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#1;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#2;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#3;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Row#1;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#0;n#Row#1;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#1;n#Row#1;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#0;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#1;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#2;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#3;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#0;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#1;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#2;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#3;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#0;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#1;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#2;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#3;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#0;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#1;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#2;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#3;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Row#0;n#Card#2;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#0;n#Row#0;n#Card#2;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Col#1;n#Row#0;n#Card#2;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#11606#11711#0" expanded="true" />
+                <element signature="e#14849#14970#0" expanded="false" />
+                <element signature="e#15326#15643#0" expanded="false" />
+                <element signature="e#15645#16267#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api/activity/activity.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/user/user.js">
+      <file leaf-file-name="member.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api/member/member.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+            <state relative-caret-position="250">
+              <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -81,18 +180,18 @@
       <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            <state relative-caret-position="175">
+              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webpack.base.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/webpack.base.config.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+            <state relative-caret-position="525">
+              <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -158,27 +257,29 @@
         <option value="$PROJECT_DIR$/src/views/good/good-list.vue" />
         <option value="$PROJECT_DIR$/src/views/rubbish/rubbish-size.vue" />
         <option value="$PROJECT_DIR$/src/views/rubbish/rubbish-sign.vue" />
-        <option value="$PROJECT_DIR$/src/router/router.js" />
         <option value="$PROJECT_DIR$/src/views/home/modifyBaseInfo.vue" />
         <option value="$PROJECT_DIR$/src/views/home/home.vue" />
-        <option value="$PROJECT_DIR$/src/views/member/member-manage.vue" />
         <option value="$PROJECT_DIR$/src/views/activity/activity-price.vue" />
         <option value="$PROJECT_DIR$/src/views/activity/activity-type.vue" />
         <option value="$PROJECT_DIR$/src/views/activity/activity-upload.vue" />
-        <option value="$PROJECT_DIR$/src/views/activity/activity-list.vue" />
         <option value="$PROJECT_DIR$/src/views/rubbish/rubbish-type.vue" />
         <option value="$PROJECT_DIR$/src/libs/util.js" />
         <option value="$PROJECT_DIR$/src/server/config.js" />
         <option value="$PROJECT_DIR$/src/locale/index.js" />
         <option value="$PROJECT_DIR$/src/main.js" />
-        <option value="$PROJECT_DIR$/src/server/index.js" />
-        <option value="$PROJECT_DIR$/src/views/login.vue" />
         <option value="$PROJECT_DIR$/build/webpack.prod.config.js" />
         <option value="$PROJECT_DIR$/build/webpack.base.config.js" />
         <option value="$PROJECT_DIR$/config/dev.env.js" />
         <option value="$PROJECT_DIR$/build/webpack.dev.config.js" />
-        <option value="$PROJECT_DIR$/src/api/user/user.js" />
+        <option value="$PROJECT_DIR$/src/api/activity/activity.js" />
+        <option value="$PROJECT_DIR$/src/api/member/member.js" />
         <option value="$PROJECT_DIR$/config/index.js" />
+        <option value="$PROJECT_DIR$/src/api/user/user.js" />
+        <option value="$PROJECT_DIR$/src/views/login.vue" />
+        <option value="$PROJECT_DIR$/src/server/index.js" />
+        <option value="$PROJECT_DIR$/src/views/member/member-manage.vue" />
+        <option value="$PROJECT_DIR$/src/router/router.js" />
+        <option value="$PROJECT_DIR$/src/views/activity/activity-list.vue" />
       </list>
     </option>
   </component>
@@ -279,11 +380,55 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
+              <option name="myItemId" value="member" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PickupChinaPc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PickupChinaPc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PickupChinaPc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PickupChinaPc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -302,34 +447,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PickupChinaPc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PickupChinaPc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PickupChinaPc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PickupChinaPc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -354,11 +471,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Main_Pro\PickupChinaPc\src\api\member" />
+      <recent name="E:\Main_Pro\PickupChinaPc\src\api\activity" />
       <recent name="E:\Main_Pro\PickupChinaPc\config" />
       <recent name="E:\Main_Pro\PickupChinaPc\src\server" />
       <recent name="E:\Main_Pro\PickupChinaPc\src\api\user" />
-      <recent name="E:\Main_Pro\PickupChinaPc\src\views\activity" />
-      <recent name="E:\Main_Pro\PickupChinaPc\src\views\home" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -466,7 +583,7 @@
       <updated>1526750086524</updated>
       <workItem from="1526750088163" duration="2162000" />
       <workItem from="1526752293728" duration="6254000" />
-      <workItem from="1526778955561" duration="19404000" />
+      <workItem from="1526778955561" duration="26903000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1526755566468</created>
@@ -503,11 +620,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526792120087</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="接口调试通过O(∩_∩)O哈哈~">
+      <created>1526799740234</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1526799740234</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27820000" />
+    <option name="totallyTimeSpent" value="35319000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -519,15 +643,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20547946" sideWeight="0.54352677" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17702845" sideWeight="0.54352677" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1953125" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29017857" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18526785" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25223213" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24441965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -549,7 +673,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35379463" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24665178" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25223213" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18440464" sideWeight="0.39174107" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24441965" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -574,7 +698,8 @@
     <MESSAGE value="init project" />
     <MESSAGE value="首页会员管理" />
     <MESSAGE value="活动管理" />
-    <option name="LAST_COMMIT_MESSAGE" value="活动管理" />
+    <MESSAGE value="接口调试通过O(∩_∩)O哈哈~" />
+    <option name="LAST_COMMIT_MESSAGE" value="接口调试通过O(∩_∩)O哈哈~" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -583,14 +708,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.eslintrc.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/pickupChina/home.vue" />
     <entry file="file://$PROJECT_DIR$/src/views/member/member-manage.less" />
     <entry file="file://$PROJECT_DIR$/src/views/form/article-publish/preview.less" />
     <entry file="file://$PROJECT_DIR$/src/views/activity/activity-list.less" />
@@ -729,53 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/router/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="74" column="10" lean-forward="true" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/member/member-manage.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="36" column="18" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="36" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#Card#0;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#Card#0;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Button#0;n#p#0;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#0;n#Row#0;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Row#1;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#0;n#Row#1;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#1;n#Row#1;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#2;n#Row#1;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#3;n#Row#1;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Row#2;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#0;n#Row#2;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#1;n#Row#2;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#2;n#Row#2;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#3;n#Row#2;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Row#3;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#0;n#Row#3;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#1;n#Row#3;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#2;n#Row#3;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#3;n#Row#3;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Row#4;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#0;n#Row#4;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#1;n#Row#4;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#2;n#Row#4;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#3;n#Row#4;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Row#5;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#0;n#Row#5;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Col#1;n#Row#5;n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#3399#4415#0" expanded="false" />
-            <element signature="e#4432#5064#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Main.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -796,77 +866,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/activity/activity-list.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#Row#0;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#DatePicker#0;n#FormItem#4;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Cascader#0;n#FormItem#5;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Input#0;n#FormItem#5;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Row#1;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Input#0;n#FormItem#1;n#Row#1;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Input#1;n#FormItem#1;n#Row#1;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Checkbox#0;n#Row#0;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Input#0;n#Checkbox#0;n#Row#0;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Checkbox#0;n#Row#1;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Input#0;n#Checkbox#0;n#Row#1;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Checkbox#0;n#Row#2;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Input#0;n#Checkbox#0;n#Row#2;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Input#0;n#Checkbox#0;n#Row#3;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#0;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#1;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#2;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#3;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Row#1;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#0;n#Row#1;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#1;n#Row#1;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#0;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#1;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#2;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#3;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#0;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#1;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#2;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#3;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#0;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#1;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#2;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#3;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#0;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#1;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#2;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#3;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Row#0;n#Card#2;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#0;n#Row#0;n#Card#2;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Col#1;n#Row#0;n#Card#2;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#10256#11919#0" expanded="false" />
-            <element signature="e#12708#13025#0" expanded="false" />
-            <element signature="e#13027#13649#0" expanded="false" />
-            <marker date="1526792064128" expanded="false" signature="11936:12568" ph="[...]" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/activity/activity-type.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
           <caret line="28" column="62" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/home/home.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -941,17 +944,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
-          <folding>
-            <element signature="e#88#118#0" expanded="false" />
-            <element signature="e#530#1028#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/libs/util.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -974,14 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="67" column="7" lean-forward="true" selection-start-line="65" selection-start-column="20" selection-end-line="67" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1000">
-          <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1010,14 +994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/dev.env.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -1026,26 +1002,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/webpack.base.config.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        <state relative-caret-position="-1000">
+          <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/login.vue">
+    <entry file="file://$PROJECT_DIR$/build/webpack.base.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-361">
-          <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+        <state relative-caret-position="225">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/user/user.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/config.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
-          <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="67" column="23" lean-forward="true" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+          <folding>
+            <element signature="e#1531#1563#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1053,16 +1055,132 @@
     <entry file="file://$PROJECT_DIR$/build/webpack.dev.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
-          <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <caret line="30" column="28" lean-forward="false" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/home/home.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="35" column="35" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="35" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        <state relative-caret-position="225">
+          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/member/member.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/router/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="101" column="7" lean-forward="true" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
+          <folding>
+            <element signature="e#2383#2654#0" expanded="false" />
+            <element signature="e#2658#2950#0" expanded="false" />
+            <element signature="e#2954#3813#0" expanded="false" />
+            <element signature="e#3817#4128#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/activity/activity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/member/member-manage.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="199" column="14" lean-forward="true" selection-start-line="199" selection-start-column="14" selection-end-line="199" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#Select#0;n#FormItem#1;n#Row#0;n#Form#0;n#Card#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#DatePicker#0;n#FormItem#2;n#Row#0;n#Form#0;n#Card#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#3;n#Row#0;n#Form#0;n#Card#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#Card#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#4909#5898#0" expanded="false" />
+            <element signature="e#4921#4983#0" expanded="false" />
+            <element signature="e#4995#5063#0" expanded="false" />
+            <element signature="e#5075#5654#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/activity/activity-list.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="464" column="8" lean-forward="true" selection-start-line="464" selection-start-column="8" selection-end-line="464" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#Select#0;n#FormItem#1;n#Row#0;n#Form#0;n#Card#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Select#0;n#FormItem#2;n#Row#0;n#Form#0;n#Card#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#3;n#Row#0;n#Form#0;n#Card#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Row#0;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#DatePicker#0;n#FormItem#4;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Cascader#0;n#FormItem#5;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Input#0;n#FormItem#5;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Row#1;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Input#0;n#FormItem#1;n#Row#1;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Input#1;n#FormItem#1;n#Row#1;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Checkbox#0;n#Row#0;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Input#0;n#Checkbox#0;n#Row#0;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Checkbox#0;n#Row#1;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Input#0;n#Checkbox#0;n#Row#1;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Checkbox#0;n#Row#2;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Input#0;n#Checkbox#0;n#Row#2;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Input#0;n#Checkbox#0;n#Row#3;n#CheckboxGroup#0;n#FormItem#6;n#Form#0;n#Modal#0;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#0;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#1;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#2;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#3;n#Row#0;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Row#1;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#0;n#Row#1;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#1;n#Row#1;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#0;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#1;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#2;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#3;n#Row#2;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#0;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#1;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#2;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#3;n#Row#3;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#0;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#1;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#2;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#3;n#Row#4;n#Card#0;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#0;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#1;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#2;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#3;n#Row#0;n#Card#1;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Row#0;n#Card#2;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#0;n#Row#0;n#Card#2;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Col#1;n#Row#0;n#Card#2;n#Modal#1;n#Row#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#11606#11711#0" expanded="true" />
+            <element signature="e#14849#14970#0" expanded="false" />
+            <element signature="e#15326#15643#0" expanded="false" />
+            <element signature="e#15645#16267#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

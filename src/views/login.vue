@@ -10,6 +10,11 @@
                     <Icon type="log-in"></Icon>
                     欢迎登录
 
+
+
+
+
+
                 </p>
                 <div class="form-con">
                     <Form ref="loginForm" :model="form" :rules="rules">
@@ -46,8 +51,8 @@
     data () {
       return {
         form: {
-          userName: 'iview_admin',
-          password: ''
+          userName: 'test',
+          password: 'test'
         },
         rules: {
           userName: [
@@ -63,23 +68,18 @@
       handleSubmit () {
         this.$refs.loginForm.validate((valid) => {
           if (valid) {
-//            mobile: phone,
-//              loginPassword: password
-//            userLogin({account: this.form.userName, password: this.form.password}).then(res => {
-            userLogin({mobile: this.form.userName, loginPassword: this.form.password}).then(res => {
-              console.log(res)
+            userLogin({account: this.form.userName, password: this.form.password}).then(res => {
+              if (res.status === 200) {
+                Cookies.set('user', this.form.userName);
+                Cookies.set('password', this.form.password);
+                Cookies.set('access', 0);
+                this.$router.push({
+                  name: 'member'
+                });
+              } else {
+                this.$Message.error(res.data);
+              }
             })
-//            Cookies.set('user', this.form.userName);
-//            Cookies.set('password', this.form.password);
-//            this.$store.commit('setAvator', 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3448484253,3685836170&fm=27&gp=0.jpg');
-//            if (this.form.userName === 'iview_admin') {
-//              Cookies.set('access', 0);
-//            } else {
-//              Cookies.set('access', 1);
-//            }
-//            this.$router.push({
-//              name: 'home_index'
-//            });
           }
         });
       }
