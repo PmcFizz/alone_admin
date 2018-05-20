@@ -63,6 +63,24 @@ export const otherRouter = {
 // 作为Main组件的子页面展示并且在左侧菜单显示的路由写在appRouter里
 export const appRouter = [
   {
+    path: '/',
+    icon: 'android-checkbox',
+    name: 'otherRouter',
+    redirect: '/home',
+    title: '首页',
+    access: 0,
+    component: Main,
+    children: [
+      {path: 'home', title: {i18n: 'home'}, name: 'home_index', component: () => import('@/views/home/home.vue')}
+      // {
+      //   path: 'ownspace',
+      //   title: '个人中心',
+      //   name: 'ownspace_index',
+      //   component: () => import('@/views/own-space/own-space.vue')
+      // }
+    ]
+  },
+  {
     path: '/member-manage',
     icon: 'android-checkbox',
     name: 'member',

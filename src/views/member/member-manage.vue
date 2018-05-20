@@ -1,6 +1,6 @@
 <template>
     <Row>
-        <Col span="16">
+        <Col span="16" v-show="showListView">
         <Card :bordered="false">
             <p slot="title">会员管理</p>
             <Table :columns="columns1" :data="data1"></Table>
@@ -9,6 +9,82 @@
                     <Page :total="100" :current="1" @on-change="changePage"></Page>
                 </div>
             </div>
+        </Card>
+        </Col>
+        <Col span="12" v-show="!showListView">
+        <Card :bordered="false">
+            <p slot="title" style="height: 25px">会员信息
+            <Button style="float: right" type="primary" @click="returnListView" size="small">返回</Button>
+</p>
+            <Row >
+                <Col span="24" style="text-align: center;height: 80px">
+                <Avatar size="large" src="https://i.loli.net/2017/08/21/599a521472424.jpg"/>
+                </Col>
+            </Row>
+            <Row style="height: 50px">
+                <Col span="6" style="text-align: right">
+                会员编号：
+                </Col>
+                <Col span="6" style="text-align: left">
+                {{infoData.number}}&nbsp;
+                </Col>
+                <Col span="6" style="text-align: right">
+                会员类别:
+                </Col>
+                <Col span="6" style="text-align: left">
+                {{infoData.type}}&nbsp;
+                </Col>
+            </Row>
+            <Row style="height: 50px">
+                <Col span="6" style="text-align: right">
+                性别：
+                </Col>
+                <Col span="6" style="text-align: left">
+                {{infoData.sex}}&nbsp;
+                </Col>
+                <Col span="6" style="text-align: right">
+                出生日期：
+                </Col>
+                <Col span="6" style="text-align: left">
+                {{infoData.birthday}}&nbsp;
+                </Col>
+            </Row>
+            <Row style="height: 50px">
+                <Col span="6" style="text-align: right">
+                手机号码：
+                </Col>
+                <Col span="6" style="text-align: left">
+                {{infoData.phoneNo}}&nbsp;
+                </Col>
+                <Col span="6" style="text-align: right">
+                城市：
+                </Col>
+                <Col span="6" style="text-align: left">
+                {{infoData.city}}&nbsp;
+                </Col>
+            </Row>
+            <Row style="height: 50px">
+                <Col span="6" style="text-align: right">
+                证件类型：
+                </Col>
+                <Col span="6" style="text-align: left">
+                {{infoData.IDCardType}}&nbsp;
+                </Col>
+                <Col span="6" style="text-align: right">
+                证件号码：
+                </Col>
+                <Col span="6" style="text-align: left">
+                {{infoData.IDCardNo}}&nbsp;
+                </Col>
+            </Row>
+            <Row style="height: 50px">
+                <Col span="6" style="text-align: right">
+                个人简介：
+                </Col>
+                <Col span="6" style="text-align: left">
+                {{infoData.summary}}&nbsp;
+                </Col>
+            </Row>
         </Card>
         </Col>
     </Row>
@@ -53,16 +129,11 @@
             render: (h, params) => {
               return h('div', [
                 h('Button', {
-                  props: {
-                    type: 'primary',
-                    size: 'small'
-                  },
-                  style: {
-                    marginRight: '5px'
-                  },
+                  props: {type: 'primary', size: 'small'},
+                  style: {marginRight: '5px'},
                   on: {
                     click: () => {
-                      this.show(params.index)
+                      this.clickSee(params.index)
                     }
                   }
                 }, '查看')
@@ -95,12 +166,20 @@
             address: 'Ottawa No. 2 Lake Park',
             date: '2016-10-04'
           }
-        ]
+        ],
+        infoData: {},
+        showListView: true
       }
     },
     computed: {},
     methods: {
-      changePage(val){}
+      changePage(val){},
+      clickSee(index){
+        this.showListView = false
+      },
+      returnListView(){
+        this.showListView = true
+      }
     }
   };
 </script>
