@@ -25,10 +25,10 @@ npm run build
 公司评价管理
 
 ## 内容截图
-<img width="200" src="./src/images/sj_showtime/home.png" />
-<img width="200" src="./src/images/sj_showtime/index.png" />
-<img width="200" src="./src/images/sj_showtime/user_manager.png" />
-<img width="200" src="./src/images/sj_showtime/company_manager.png" />
+<img width="600" src="./src/images/sj_showtime/login.png" />
+<img width="600" src="./src/images/sj_showtime/index.png" />
+<img width="600" src="./src/images/sj_showtime/user_manager.png" />
+<img width="600" src="./src/images/sj_showtime/company_manager.png" />
 
 ## 文件结构
 ```shell
