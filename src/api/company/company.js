@@ -7,13 +7,13 @@ import $http from '../../server/index'
  * 根据id获取公司信息
  * @param data
  */
-export const getCompanyDetailById = (data) => $http.get(`/company/${data.id}`)
+export const getDetailById = (data) => $http.get(`/company/${data.id}`)
 
 /**
  * 获取公司信息列表
  * @param data
  */
-export const getCompanyListByPage = (data) => $http.post('/company/list ', data)
+export const queryByPage = (data) => $http.post('/company/queryByPage ', data)
 
 /**
  * 创建公司

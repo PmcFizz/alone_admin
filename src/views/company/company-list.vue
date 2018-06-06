@@ -1,24 +1,15 @@
 <!--公司列表 Fizz-->
 <template>
     <Row>
-        <Col span="16">
+        <Col span="24">
         <Card :bordered="false">
-            <p slot="title">活动列表</p>
+            <p slot="title">公司列表</p>
             <Form :label-width="100" style="margin-top: 20px">
                 <Row>
                     <Col span="6">
                     <FormItem label="">
                         <Input v-model="searchData.keyword"
-                               placeholder="活动编号,活动名称,"></Input>
-                    </FormItem>
-                    </Col>
-                    <Col span="6">
-                    <FormItem label="活动类型">
-                        <Select v-model="searchData.type" style="width:200px">
-                            <Option v-for="item in typeArr" :value="item.value" :key="item.value">
-                                {{ item.name }}
-                            </Option>
-                        </Select>
+                               placeholder="公司名称,简称,关键字"></Input>
                     </FormItem>
                     </Col>
                     <Col span="6">
@@ -33,16 +24,16 @@
                     <Col span="6" style="text-align: center">
                     <Button type="primary" @click="queryData" size="small">查询</Button>
                     <Button type="primary" @click="clickCreate" size="small">新增</Button>
-                    <Button type="primary" @click="createQrCode" size="small">生成并查看二维码</Button>
                     </Col>
                 </Row>
+                <p>当前公司总数:{{total}}</p>
             </Form>
             <p style="margin-bottom: 10px">
             </p>
             <Table :columns="columns1" :data="tableData"></Table>
             <div style="margin: 10px;overflow: hidden">
                 <div style="float: right;">
-                    <Page :total="100" :current="1" @on-change="changePage"></Page>
+                    <Page :total="total" :current="1" @on-change="changePage"></Page>
                 </div>
             </div>
         </Card>
@@ -268,50 +259,46 @@
 </template>
 
 <script>
-//  import { getActivityDetailById, getActivityListByPage, createOneActivity } from '@/api/activity/activity'
-  //  import activityUpload from '@/views/activity/activity-upload';
+  import { queryByPage } from '@/api/company/company'
+
   export default {
-    name: 'activity-price',
+    name: 'company-list',
     components: {},
     data () {
       return {
         columns1: [
           {
-            title: '活动编号',
-            key: 'age'
+            title: '公司名称',
+            key: 'name'
           },
           {
-            title: '活动类型',
-            key: 'age'
+            title: '简称',
+            key: 'shortName'
           },
           {
-            title: '活动名称',
-            key: 'age'
+            title: '关键字',
+            key: 'companyWord'
           },
           {
-            title: '活动时间',
-            key: 'age'
+            title: '公司链接',
+            key: 'companyLink'
           },
           {
-            title: '报名人数',
-            key: 'age'
+            title: 'logo',
+            key: 'logo'
           },
           {
-            title: '创建人',
-            key: 'age'
-          },
-          {
-            title: '更新时间',
-            key: 'age'
+            title: '创建时间',
+            key: 'createDate'
           },
           {
             title: '状态',
-            key: 'age'
+            key: 'status'
           },
           {
             title: '操作',
             key: 'age',
-            width: 150,
+            width: 300,
             align: 'center',
             render: (h, params) => {
               return h('div', [
@@ -343,34 +330,7 @@
                       this.clickDelOne(params.index)
                     }
                   }
-                }, '删除'),
-                h('Button', {
-                  props: {type: 'primary', size: 'small'},
-                  style: {marginRight: '5px'},
-                  on: {
-                    click: () => {
-                      this.clickPush(params.index)
-                    }
-                  }
-                }, '发布'),
-                h('Button', {
-                  props: {type: 'primary', size: 'small'},
-                  style: {marginRight: '5px'},
-                  on: {
-                    click: () => {
-                      this.clickCopyCreate(params.index)
-                    }
-                  }
-                }, '复制创建'),
-                h('Button', {
-                  props: {type: 'primary', size: 'small'},
-                  style: {marginRight: '5px'},
-                  on: {
-                    click: () => {
-                      this.clickRecall(params.index)
-                    }
-                  }
-                }, '撤回')
+                }, '删除')
               ])
             }
           }
@@ -384,8 +344,8 @@
           keyword: '',
           type: '',
           status: '',
-          pageNum: 1,
-          pageSize: 50
+          pageIndex: 1,
+          pageSize: 20
         },
         total: 0,
         typeArr: [{name: '后台创建', value: 1}, {name: '会员常见', value: 2}, {name: '全部', value: ''}],
@@ -439,13 +399,13 @@
     },
     computed: {},
     mounted () {
-//      this.queryData()
+      this.queryData()
     },
     methods: {
       queryData () {
-        getActivityListByPage(this.searchData).then(res => {
-          this.tableData = res.data.list
-          this.total = res.data.total
+        queryByPage(this.searchData).then(res => {
+          this.tableData = res.data.records
+          this.total = res.data.recordsTotal
         })
       },
       createQrCode () {
