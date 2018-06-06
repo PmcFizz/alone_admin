@@ -5,7 +5,7 @@ import packjson from '../../package.json'
 
 let util = {}
 util.title = function (title) {
-  title = title || '捡拾中国'
+  title = title || '师匠空间'
   window.document.title = title
 }
 

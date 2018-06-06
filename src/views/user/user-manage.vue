@@ -1,18 +1,19 @@
+<!--用户管理 Fizz-->
 <template>
     <Row>
         <Col span="16" v-show="showListView">
         <Card :bordered="false">
-            <p slot="title">会员管理</p>
+            <p slot="title">用户管理</p>
             <Form :label-width="100" style="margin-top: 20px">
                 <Row>
                     <Col span="6">
                     <FormItem label="">
                         <Input v-model="searchData.keyword"
-                               placeholder="会员编号,手机号,城市,昵称"></Input>
+                               placeholder="名字,手机号"></Input>
                     </FormItem>
                     </Col>
                     <Col span="6">
-                    <FormItem label="会员类型">
+                    <FormItem label="状态">
                         <Select v-model="searchData.type" style="width:200px">
                             <Option v-for="item in typeArr" :value="item.value" :key="item.value">
                                 {{ item.name }}
@@ -21,7 +22,7 @@
                     </FormItem>
                     </Col>
                     <Col span="6">
-                    <FormItem label="注册日期">
+                    <FormItem label="创建日期">
                         <DatePicker v-model="searchData.timerang" type="daterange" split-panels
                                     placeholder="Select date"
                                     style="width: 200px"></DatePicker>
@@ -36,20 +37,14 @@
             <Table :columns="columns1" :data="tableData"></Table>
             <div style="margin: 10px;overflow: hidden">
                 <div style="float: right;">
-                    <Page :total="100" :current="1" @on-change="changePage"></Page>
+                    <Page :total="total" :current="1" @on-change="changePage"></Page>
                 </div>
             </div>
         </Card>
         </Col>
         <Col span="12" v-show="!showListView">
         <Card :bordered="false">
-            <p slot="title" style="height: 25px">会员信息
-
-
-
-
-
-
+            <p slot="title" style="height: 25px">用户信息
                 <Button style="float: right" type="primary" @click="returnListView" size="small">返回</Button>
             </p>
             <Row>
@@ -127,7 +122,8 @@
 </template>
 
 <script>
-  import { getMemberList, getMemberDetail, createOneMember } from '@/api/member/member'
+  import { queryUserByPage } from '@/api/user/user'
+
   export default {
     name: 'member-manage',
     components: {},
@@ -135,46 +131,28 @@
       return {
         columns1: [
           {
-            title: '会员编号',
-            key: 'id'
-          },
-          {
-            title: '会员类型',
-            key: 'category'
+            title: '名字',
+            key: 'name'
           },
           {
             title: '手机号',
-            key: 'phone',
-            render: (h, params) => {
-              return h('div', [
-                h('Button', {
-                  props: {
-                    type: 'primary',
-                    size: 'small'
-                  },
-                  style: {
-                    marginRight: '5px'
-                  },
-                  on: {
-                    click: () => {
-                      this.clickSee(params.index)
-                    }
-                  }
-                }, 'View')
-              ])
-            }
+            key: 'phoneNo'
           },
           {
-            title: '城市',
-            key: 'city'
+            title: '邮箱',
+            key: 'email'
           },
           {
-            title: '昵称',
-            key: 'nickname'
+            title: '创建时间',
+            key: 'createDate'
           },
           {
-            title: '注册时间',
-            key: 'createTime'
+            title: 'lastModifyDate',
+            key: '修改时间'
+          },
+          {
+            title: '状态',
+            key: 'status'
           }
         ],
         tableData: [],
@@ -194,24 +172,24 @@
       }
     },
     computed: {},
-    mounted(){
+    mounted () {
       this.queryData()
     },
     methods: {
-      queryData(){
-        getMemberList(this.searchData).then(res => {
-          this.tableData = res.data.list
-          this.total = res.data.total
+      queryData () {
+        queryUserByPage(this.searchData).then(res => {
+          this.tableData = res.data.records
+          this.total = res.data.recordsTotal
         })
       },
-      changePage(val){},
-      clickSee(index){
+      changePage (val) {},
+      clickSee (index) {
         this.infoData = this.tableData[index]
         this.showListView = false
       },
-      returnListView(){
+      returnListView () {
         this.showListView = true
       }
     }
-  };
+  }
 </script>

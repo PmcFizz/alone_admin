@@ -42,7 +42,6 @@ export default ((url = '', data = {}) => {
           withCredentials: true,
           headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
         }).then(function (response) {
-          debugger
           if (response.data.status === 1101) {
             router.push({path: '/login'})
           } else if (response.data.status === 200) {

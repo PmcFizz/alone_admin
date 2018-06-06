@@ -1,3 +1,4 @@
+<!--公司列表 Fizz-->
 <template>
     <Row>
         <Col span="16">
@@ -74,10 +75,10 @@
                     <Input v-model="activityInfo.input" placeholder="请输入微信分享文案"></Input>
                 </FormItem>
                 <FormItem label="活动列表图：">
-                    <activityUpload></activityUpload>
+                    <!--<activityUpload></activityUpload>-->
                 </FormItem>
                 <FormItem label="活动详情图：">
-                    <activityUpload></activityUpload>
+                    <!--<activityUpload></activityUpload>-->
                 </FormItem>
                 <FormItem label="活动时间：">
                     <DatePicker type="daterange" split-panels placeholder="Select date"
@@ -177,7 +178,7 @@
                     </Col>
                     <Col span="6" style="text-align: left">
                     {{activityDetail.type}}&nbsp;
-                     </Col>
+                    </Col>
                 </Row>
                 <Row style="height: 50px">
                     <Col span="6" style="text-align: right">
@@ -185,7 +186,7 @@
                     </Col>
                     <Col span="12" style="text-align: left">
                     {{activityDetail.number}}&nbsp;
-                     </Col>
+                    </Col>
                 </Row>
                 <Row style="height: 50px">
                     <Col span="6" style="text-align: right">
@@ -207,7 +208,7 @@
                     </Col>
                     <Col span="6" style="text-align: left">
                     {{activityDetail.number}}&nbsp;
-                     </Col>
+                    </Col>
                     <Col span="6" style="text-align: right">
                     活动人数:
                     </Col>
@@ -245,7 +246,7 @@
                     </Col>
                     <Col span="6" style="text-align: left">
                     {{activityDetail.type}}&nbsp;
-                     </Col>
+                    </Col>
                 </Row>
             </Card>
             <Card :bordered="false">
@@ -267,13 +268,11 @@
 </template>
 
 <script>
-  import { getActivityDetailById, getActivityListByPage, createOneActivity } from '@/api/activity/activity'
-  import activityUpload from '@/views/activity/activity-upload';
+//  import { getActivityDetailById, getActivityListByPage, createOneActivity } from '@/api/activity/activity'
+  //  import activityUpload from '@/views/activity/activity-upload';
   export default {
     name: 'activity-price',
-    components: {
-      activityUpload
-    },
+    components: {},
     data () {
       return {
         columns1: [
@@ -372,7 +371,7 @@
                     }
                   }
                 }, '撤回')
-              ]);
+              ])
             }
           }
         ],
@@ -439,48 +438,48 @@
       }
     },
     computed: {},
-    mounted(){
-      this.queryData()
+    mounted () {
+//      this.queryData()
     },
     methods: {
-      queryData(){
+      queryData () {
         getActivityListByPage(this.searchData).then(res => {
           this.tableData = res.data.list
           this.total = res.data.total
         })
       },
-      createQrCode(){
+      createQrCode () {
 
       },
-      changePage(val){},
-      clickUpdate(index){
+      changePage (val) {},
+      clickUpdate (index) {
         this.showEditModal = true
       },
-      clickSee(index){
+      clickSee (index) {
         this.showDetailModal = true
       },
-      cancleSee(){
+      cancleSee () {
         this.showDetailModal = false
       },
-      saveData(){
+      saveData () {
         this.showEditModal = false
       },
-      cancelUpdate(){
+      cancelUpdate () {
         this.showEditModal = false
       },
-      clickCreate(){
+      clickCreate () {
         this.showEditModal = true
       },
-      clickDelOne(index){
+      clickDelOne (index) {
 
       },
-      clickPush(index){
+      clickPush (index) {
 
       },
-      clickCopyCreate(index){},
-      clickRecall(index){
+      clickCopyCreate (index) {},
+      clickRecall (index) {
 
       }
     }
-  };
+  }
 </script>

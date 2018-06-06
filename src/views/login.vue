@@ -38,15 +38,16 @@
 </template>
 
 <script>
-  import Cookies from 'js-cookie';
+  import Cookies from 'js-cookie'
 
-  import { userLogin } from  '@/api/user/user'
+  import { userLogin } from '@/api/user/user'
+
   export default {
     data () {
       return {
         form: {
-          userName: 'test',
-          password: 'test'
+          userName: 'pmc',
+          password: 'isbetter'
         },
         rules: {
           userName: [
@@ -56,29 +57,29 @@
             {required: true, message: '密码不能为空', trigger: 'blur'}
           ]
         }
-      };
+      }
     },
     methods: {
       handleSubmit () {
         this.$refs.loginForm.validate((valid) => {
           if (valid) {
             userLogin({account: this.form.userName, password: this.form.password}).then(res => {
-              if (res.status === 200) {
-                Cookies.set('user', this.form.userName);
-                Cookies.set('password', this.form.password);
-                Cookies.set('access', 0);
+              if (res.code === 200) {
+                Cookies.set('user', this.form.userName)
+                Cookies.set('password', this.form.password)
+                Cookies.set('access', 0)
                 this.$router.push({
                   name: 'member'
-                });
+                })
               } else {
-                this.$Message.error(res.data);
+                this.$Message.error(res.data)
               }
             })
           }
-        });
+        })
       }
     }
-  };
+  }
 </script>
 
 <style>

@@ -47,7 +47,7 @@ export const locking = {
 export const otherRouter = {
   path: '/',
   name: 'otherRouter',
-  redirect: '/member-manage',
+  redirect: '/user-manage',
   component: Main,
   children: [
     {path: 'home', title: {i18n: 'home'}, name: 'home_index', component: () => import('@/views/home/home.vue')},
@@ -62,128 +62,38 @@ export const otherRouter = {
 
 // 作为Main组件的子页面展示并且在左侧菜单显示的路由写在appRouter里
 export const appRouter = [
-  // {
-  //   path: '/',
-  //   icon: 'android-checkbox',
-  //   name: 'otherRouter',
-  //   redirect: '/home',
-  //   title: '首页',
-  //   access: 0,
-  //   component: Main,
-  //   children: [
-  //     {path: 'home', title: {i18n: 'home'}, name: 'home_index', component: () => import('@/views/home/home.vue')}
-  //   ]
-  // },
   {
-    path: '/member-manage',
+    path: '/user-manage',
     icon: 'android-checkbox',
-    name: 'member',
-    title: '会员管理',
+    name: 'user',
+    title: '用户管理',
     access: 0,
     component: Main,
     children: [
       {
         path: 'index',
-        title: '会员管理',
-        name: 'member-manage',
+        title: '用户管理',
+        name: 'user-manage',
         access: 0,
-        component: () => import('@/views/member/member-manage.vue')
+        component: () => import('@/views/user/user-manage.vue')
       }
     ]
   },
   {
-    path: '/activity-manage',
+    path: '/company-manage',
     icon: 'android-checkbox',
-    name: 'activity',
-    title: '活动管理',
+    name: 'company',
+    title: '公司管理',
     access: 0,
     component: Main,
     children: [
       {
         path: 'list',
-        title: '活动列表',
-        name: 'activity-list',
+        title: '公司列表',
+        name: 'company-list',
         access: 0,
-        component: () => import('@/views/activity/activity-list.vue')
+        component: () => import('@/views/company/company-list.vue')
       }]
-  },
-  {
-    path: '/activity-audit',
-    icon: 'android-checkbox',
-    name: 'audit',
-    title: '活动审核',
-    access: 0,
-    component: Main,
-    children: [
-      {path: 'index', title: '活动审核', name: 'activity-audit', component: () => import('@/views/activity/activity-audit')}
-    ]
-  },
-  {
-    path: '/order-manage',
-    icon: 'android-checkbox',
-    name: 'order',
-    title: '订单管理',
-    component: Main,
-    children: [{
-      path: 'index',
-      title: '订单管理',
-      name: 'order-list',
-      access: 0,
-      component: () => import('@/views/order/order-list.vue')
-    }]
-  },
-  {
-    path: '/rubbish-manage',
-    icon: 'android-checkbox',
-    name: 'rubbish',
-    title: '垃圾管理',
-    component: Main,
-    children: [
-      {
-        path: 'type',
-        title: '垃圾分类',
-        name: 'rubbish-type',
-        access: 0,
-        component: () => import('@/views/rubbish/rubbish-type.vue')
-      },
-      {
-        path: 'size',
-        title: '垃圾尺寸',
-        name: 'rubbish-size',
-        access: 0,
-        component: () => import('@/views/rubbish/rubbish-size.vue')
-      },
-      {
-        path: 'set',
-        title: '垃圾设置',
-        name: 'rubbish-set',
-        access: 0,
-        component: () => import('@/views/rubbish/rubbish-set.vue')
-      },
-      {
-        path: 'sign',
-        title: '垃圾标记',
-        name: 'rubbish-sign',
-        access: 0,
-        component: () => import('@/views/rubbish/rubbish-sign.vue')
-      }
-    ]
-  },
-  {
-    path: '/good-manage',
-    icon: 'android-checkbox',
-    name: 'good',
-    title: '物资管理',
-    component: Main,
-    children: [
-      {
-        path: 'index',
-        title: '物资管理',
-        name: 'good-list',
-        access: 0,
-        component: () => import('@/views/good/good-list.vue')
-      }
-    ]
   }
 ]
 
