@@ -8,22 +8,31 @@
                 <Row>
                     <Col span="6">
                     <FormItem label="">
-                        <Input v-model="searchData.keyword"
+                        <Input v-model="searchData.name"
                                placeholder="公司名称,简称,关键字"></Input>
                     </FormItem>
                     </Col>
                     <Col span="6">
                     <FormItem label="状态">
-                        <Select v-model="searchData.type" style="width:200px">
-                            <Option v-for="item in statusArr" :value="item.value" :key="item.value">
-                                {{ item.name }}
+                        <Select v-model="searchData.status" style="width:200px">
+                            <Option v-for="item in companyStatusArr" :value="item.value" :key="item.value">
+                                {{ item.label }}
+                            </Option>
+                        </Select>
+                    </FormItem>
+                    </Col>
+                    <Col span="6">
+                    <FormItem label="信用等级">
+                        <Select v-model="searchData.creditLeve" style="width:200px">
+                            <Option v-for="item in companyCreditLeveArr" :value="item.value" :key="item.value">
+                                {{ item.label }}
                             </Option>
                         </Select>
                     </FormItem>
                     </Col>
                     <Col span="6" style="text-align: center">
-                    <Button type="primary" @click="queryData" size="small">查询</Button>
-                    <Button type="primary" @click="clickCreate" size="small">新增</Button>
+                    <Button type="primary" @click="queryData" >查询</Button>
+                    <Button type="primary" @click="clickCreate" >新增</Button>
                     </Col>
                 </Row>
                 <p>当前公司总数:{{total}}</p>
@@ -41,119 +50,78 @@
 
         <Modal
                 v-model="showEditModal"
-                title="新建/更新活动"
+                title="新建/更新公司"
                 @on-ok="saveData"
                 width="800px"
                 @on-cancel="cancelUpdate">
             <Form :label-width="120">
                 <Row style="height: 50px">
                     <Col span="12">
-                    <FormItem label="活动名称：">
-                        <Input v-model="activityInfo.input" placeholder="请输入活动名称"></Input>
+                    <FormItem label="公司名称：">
+                        <Input v-model="activityInfo.input" placeholder="请输入公司名称"></Input>
                     </FormItem>
                     </Col>
                     <Col span="12">
-                    <FormItem label="活动宣传语：">
-                        <Input v-model="activityInfo.input" placeholder="请输入活动宣传语"></Input>
+                    <FormItem label="公司简称：">
+                        <Input v-model="activityInfo.input" placeholder="请输入公司简称"></Input>
                     </FormItem>
                     </Col>
                 </Row>
-                <FormItem label="活动介绍：">
-                    <Input v-model="activityInfo.input" type="textarea"
-                           :autosize="{minRows: 2,maxRows: 5}" placeholder="请输入活动介绍"></Input>
-                </FormItem>
-                <FormItem label="微信分享文案：">
-                    <Input v-model="activityInfo.input" placeholder="请输入微信分享文案"></Input>
-                </FormItem>
-                <FormItem label="活动列表图：">
-                    <!--<activityUpload></activityUpload>-->
-                </FormItem>
-                <FormItem label="活动详情图：">
-                    <!--<activityUpload></activityUpload>-->
-                </FormItem>
-                <FormItem label="活动时间：">
-                    <DatePicker type="daterange" split-panels placeholder="Select date"
-                                style="width: 200px"></DatePicker>
-                </FormItem>
-                <FormItem label="活动地点：">
+                <Row style="height: 50px">
+                    <Col span="12">
+                    <FormItem label="公司官网：">
+                        <Input v-model="activityInfo.input" placeholder="请输入公司官网"></Input>
+                    </FormItem>
+                    </Col>
+                    <Col span="12">
+                    <FormItem label="公司logo：">
+                        <Input v-model="activityInfo.input" placeholder="请输入公司logo地址"></Input>
+                    </FormItem>
+                    </Col>
+                </Row>
+                <Row style="height: 50px">
+                    <Col span="12">
+                    <FormItem label="公司状态：">
+                        <Input v-model="activityInfo.input" placeholder="请输入公司名称"></Input>
+                    </FormItem>
+                    </Col>
+                    <Col span="12">
+                    <FormItem label="公司标签：">
+                        <Input v-model="activityInfo.input" placeholder="请输入公司名称"></Input>
+                    </FormItem>
+                    </Col>
+                </Row>
+                <FormItem label="公司地点：">
                     <Cascader :data="addressData" style="width: 200px;display:inline-block;"></Cascader>
                     <Input v-model="activityInfo.input"
                            style="width: 300px;"
                            placeholder="请输街道门牌号详细地址"></Input>
                 </FormItem>
+
+                <FormItem label="公司介绍：">
+                    <Input v-model="activityInfo.input" type="textarea"
+                           :autosize="{minRows: 2,maxRows: 5}" placeholder="请输入活动介绍"></Input>
+                </FormItem>
+
                 <Row style="height: 50px">
-                    <Col span="10">
-                    <FormItem label="活动人数：">
-                        <Input v-model="activityInfo.input" placeholder="请输入活动人数"></Input>
+                    <Col span="12">
+                    <FormItem label="链接名称：">
+                        <Input v-model="activityInfo.input" placeholder="请输入公司名称"></Input>
                     </FormItem>
                     </Col>
                     <Col span="12">
-                    <FormItem label="参与年龄：">
-                        <Input v-model="activityInfo.input" style="width: 120px" placeholder="最小参与年龄"></Input>
-                        <Input v-model="activityInfo.input" style="width: 120px" placeholder="最大参与年龄"></Input>
+                    <FormItem label="链接地址：">
+                        <Input v-model="activityInfo.input" placeholder="请输入公司名称"></Input>
                     </FormItem>
                     </Col>
                 </Row>
-                <FormItem label="报名费用：">
-                    <CheckboxGroup v-model="activityInfo.cost">
-                        <Row>
-                            <Col span="24">
-                            <Checkbox label="twitter" style="width: 100%;float: left">
-                                <span>儿童(<=12)</span>
-                                <Input style="width: 300px;margin-left: 110px;top: -32px"
-                                       v-model="activityInfo.input" placeholder="请输入活动人数">
-                                <span slot="append">元/人</span>
-                                </Input>
-                            </Checkbox>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col span="24">
-                            <Checkbox label="twitter" style="width: 100%;float: left">
-                                <span>普通(>=13,<=59)</span>
-                                <Input style="width: 300px;margin-left: 110px;top: -32px"
-                                       v-model="activityInfo.input" placeholder="请输入活动人数">
-                                <span slot="append">元/人</span>
-                                </Input>
-                            </Checkbox>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col span="24">
-                            <Checkbox label="twitter" style="width: 100%;float: left">
-                                <span>老年(>=60)</span>
-                                <Input style="width: 300px;margin-left: 110px;top: -32px"
-                                       v-model="activityInfo.input" placeholder="请输入活动人数">
-                                <span slot="append">元/人</span>
-                                </Input>
-                            </Checkbox>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col span="24">
-                            <Checkbox label="twitter">
-                                <span>团体(<=12)</span>
-                                <Input style="width: 300px;margin-left: 110px;top: -32px"
-                                       v-model="activityInfo.input" placeholder="请输入活动人数">
-                                <span slot="append">元/人</span>
-                                </Input>
-                            </Checkbox>
-                            </Col>
-                        </Row>
-                    </CheckboxGroup>
-                </FormItem>
-                <FormItem label="活动须知：">
-                    <Upload action="//jsonplaceholder.typicode.com/posts/">
-                        <Button type="ghost" icon="ios-cloud-upload-outline">上传文件</Button>
-                    </Upload>
-                </FormItem>
 
             </Form>
         </Modal>
 
         <Modal
                 v-model="showDetailModal"
-                title="活动详情"
+                title="公司详情"
                 @on-cancel="cancleSee">
             <Card :bordered="false">
                 <p slot="title">基本信息</p>
@@ -259,7 +227,7 @@
 </template>
 
 <script>
-  import { queryByPage } from '@/api/company/company'
+  import { queryByPage,companyStatusArr,companyCreditLeveArr } from '@/api/company/company'
 
   export default {
     name: 'company-list',
@@ -336,14 +304,16 @@
           }
         ],
         tableData: [],
+        companyStatusArr,
+        companyCreditLeveArr,
         showEditModal: false,
         showDetailModal: false,
         activityInfo: {},
         activityDetail: {},
         searchData: {
-          keyword: '',
-          type: '',
+          name: '',
           status: '',
+          creditLeve:'',
           pageIndex: 1,
           pageSize: 20
         },
@@ -407,9 +377,6 @@
           this.tableData = res.data.records
           this.total = res.data.recordsTotal
         })
-      },
-      createQrCode () {
-
       },
       changePage (val) {},
       clickUpdate (index) {

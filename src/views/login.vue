@@ -69,7 +69,7 @@
                 Cookies.set('password', this.form.password)
                 Cookies.set('access', 0)
                 this.$router.push({
-                  name: 'member'
+                  name: 'home_index'
                 })
               } else {
                 this.$Message.error(res.data)
