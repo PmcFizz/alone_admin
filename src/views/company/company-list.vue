@@ -31,8 +31,8 @@
                     </FormItem>
                     </Col>
                     <Col span="6" style="text-align: center">
-                    <Button type="primary" @click="queryData" >查询</Button>
-                    <Button type="primary" @click="clickCreate" >新增</Button>
+                    <Button type="primary" @click="queryData">查询</Button>
+                    <Button type="primary" @click="clickCreate">新增</Button>
                     </Col>
                 </Row>
                 <p>当前公司总数:{{total}}</p>
@@ -58,7 +58,7 @@
                 <Row style="height: 50px">
                     <Col span="12">
                     <FormItem label="公司名称：">
-                        <Input v-model="activityInfo.input" placeholder="请输入公司名称"></Input>
+                        <Input v-model="companyData.name" placeholder="请输入公司名称"></Input>
                     </FormItem>
                     </Col>
                     <Col span="12">
@@ -227,7 +227,7 @@
 </template>
 
 <script>
-  import { queryByPage,companyStatusArr,companyCreditLeveArr } from '@/api/company/company'
+  import { queryByPage, companyStatusArr, companyCreditLeveArr, createOneCompany } from '@/api/company/company'
 
   export default {
     name: 'company-list',
@@ -313,10 +313,11 @@
         searchData: {
           name: '',
           status: '',
-          creditLeve:'',
+          creditLeve: '',
           pageIndex: 1,
           pageSize: 20
         },
+        companyData:{}, // 公司表单
         total: 0,
         typeArr: [{name: '后台创建', value: 1}, {name: '会员常见', value: 2}, {name: '全部', value: ''}],
         statusArr: [{name: '全部', value: 1}, {name: '未发布', value: 2},
@@ -388,8 +389,15 @@
       cancleSee () {
         this.showDetailModal = false
       },
+      // 保存公司
       saveData () {
-        this.showEditModal = false
+        createOneCompany(this.companyData).then(res => {
+          if (res.data.code === 200) {
+            this.showEditModal = false
+          } else {
+            this.$Message.error(res.data.errmsg)
+          }
+        })
       },
       cancelUpdate () {
         this.showEditModal = false

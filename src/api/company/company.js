@@ -19,7 +19,7 @@ export const queryByPage = (data) => $http.post('/company/queryByPage ', data)
  * 创建公司
  * @param data
  */
-export const createOneCompany = (data) => $http.get(`/company/activitys`)
+export const createOneCompany = (data) => $http.post(`/company/createOne`, data)
 
 /**
  * 公司状态
