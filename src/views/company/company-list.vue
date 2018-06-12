@@ -103,7 +103,7 @@
                            :autosize="{minRows: 2,maxRows: 5}" placeholder="请输入活动介绍"></Input>
                 </FormItem>
 
-                <Row style="height: 50px" v-for="item in companyData.links">
+                <Row style="height: 50px" v-for="(item,$index) in companyData.links" :key="$index">
                     <Col span="12">
                     <FormItem label="链接名称：">
                         <Input v-model="item.name" placeholder="请输入链接名称"></Input>
@@ -348,7 +348,7 @@
           status: '',
           type: '',
           companyAddress: '',
-          tags: [],
+          tags: '',
           companyIntroText: '',
           links: [{name: '', link: ''}]
         }, // 公司表单
