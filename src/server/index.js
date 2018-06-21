@@ -22,7 +22,6 @@ export default ((url = '', data = {}) => {
       return new Promise((resolve, reject) => {
         axios.get(url, {
           params: data,
-          withCredentials: true
         }).then(function (response) {
           if (response.data.status === 1101) {
             router.push({path: '/login'})
