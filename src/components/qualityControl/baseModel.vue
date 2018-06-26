@@ -2,9 +2,9 @@
     <Row class="baseModeComponents">
         <Card :bordered="false">
             <p slot="title" class="header-title" @click="clickHeader">
-                <span style="font-size: 20px">外观</span>
+                <span style="font-size: 20px">{{privateData.name}}</span>
                 <br/>
-                <span class="prototype" v-for="(item,index) in prototypeList"  :key="index">{{item.name}}</span>
+                <span class="prototype" v-for="(item,index) in prototypeList" :key="index">{{item.name}}</span>
             </p>
             <Row v-if="showContent">
                 <Form :model="formItem" :label-width="80">
@@ -67,11 +67,21 @@
 <script>
   export default {
     name: 'BaseModel',
+    props: {
+      privateData: {
+        type: Object,
+        default: {}
+      }
+    },
+    computed: {
+      prototypeList () {
+        return this.privateData.prototypeList
+      }
+    },
     data () {
       return {
         showContent: false,
         formItem: {},
-        prototypeList: [{name: '', content: [1, 2], picNum: 1, remark: '', english: ''}]
       }
     },
     methods: {
