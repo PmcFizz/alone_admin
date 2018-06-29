@@ -94,6 +94,68 @@ export const appRouter = [
         access: 0,
         component: () => import('@/views/company/company-list.vue')
       }]
+  },
+  {
+    path: '/needs',
+    icon: 'android-checkbox',
+    name: 'needs-manage',
+    title: '需求管理',
+    access: 0,
+    component: Main,
+    children: [
+      {
+        path: 'list',
+        title: '全部需求列表',
+        name: 'needs-list',
+        access: 0,
+        component: () => import('@/views/needs-manage/needs-list.vue')
+      }, {
+        path: 'create',
+        title: '创建需求',
+        name: 'create-needs',
+        access: 0,
+        component: () => import('@/views/needs-manage/create-needs.vue')
+      }, {
+        path: 'my-create',
+        title: '我的需求列表',
+        name: 'my-needs',
+        access: 0,
+        component: () => import('@/views/needs-manage/my-needs.vue')
+      }]
+  },
+  {
+    path: '/qualityControl',
+    icon: 'android-checkbox',
+    name: 'qualityControl',
+    title: '质检产品模板',
+    access: 0,
+    component: Main,
+    children: [
+      {
+        path: 'base-model',
+        title: '基础模板管理',
+        name: 'base-model',
+        access: 0,
+        component: () => import('@/views/qualityControl/base-model.vue')
+      }, {
+        path: 'define-model',
+        title: '自定义模板',
+        name: 'define-model',
+        access: 0,
+        component: () => import('@/views/qualityControl/define-model.vue')
+      }, {
+        path: 'products',
+        title: '产品列表',
+        name: 'products',
+        access: 0,
+        component: () => import('@/views/qualityControl/products.vue')
+      }, {
+        path: 'product-model',
+        title: '产品模板',
+        name: 'product-model',
+        access: 0,
+        component: () => import('@/views/qualityControl/product-model.vue')
+      }]
   }
 ]
 

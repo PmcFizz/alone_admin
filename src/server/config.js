@@ -7,7 +7,7 @@ const config = {
   },
   build: {
     // 打包发布api基本地址
-    httpUrl: 'http://127.0.0.1:8080'
+    httpUrl: 'http://115.159.52.223:3000'
   },
   // 图片地址
   imgUrl: 'www.youdingsoft.com/'
