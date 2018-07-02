@@ -21,6 +21,7 @@ export default ((url = '', data = {}) => {
     get (url, data) {
       return new Promise((resolve, reject) => {
         axios.get(url, {
+          withCredentials: false,
           params: data,
         }).then(function (response) {
           if (response.data.status === 1101) {
@@ -38,7 +39,7 @@ export default ((url = '', data = {}) => {
     post (url, data, upload = false) {
       return new Promise((resolve, reject) => {
         axios.post(url, upload ? data : qs.stringify(data), {
-          withCredentials: true,
+          withCredentials: false,
           headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
         }).then(function (response) {
           if (response.data.status === 1101) {
