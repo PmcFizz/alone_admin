@@ -156,6 +156,34 @@ export const appRouter = [
         access: 0,
         component: () => import('@/views/qualityControl/product-model.vue')
       }]
+  },
+  {
+    path: '/imgControl',
+    icon: 'android-checkbox',
+    name: 'imgControl',
+    title: '图片控制',
+    access: 0,
+    component: Main,
+    children: [
+      {
+        path: 'base-img-control',
+        title: '基本图片编辑',
+        name: 'baseImgControl',
+        access: 0,
+        component: () => import('@/views/img-control/baseImgControl.vue')
+      }, {
+        path: 'middle-img-control',
+        title: '中级图片编辑',
+        name: 'middleImgControl',
+        access: 0,
+        component: () => import('@/views/img-control/baseImgControl.vue')
+      }, {
+        path: 'high-img-control',
+        title: '高级图片编辑',
+        name: 'highImgControl',
+        access: 0,
+        component: () => import('@/views/img-control/baseImgControl.vue')
+      }]
   }
 ]
 
