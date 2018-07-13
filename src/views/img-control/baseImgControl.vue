@@ -47,39 +47,9 @@
       }
     },
     mounted () {
-      this.cvs = document.querySelector('#cvs')
-      this.ctx = this.cvs.getContext('2d')
-
-      // TODO 移动方案有待改善
-      this.cvs.onmousedown = (e) => {
-
-        this.cvs.onmousemove = (e) => {
-          this.global.x = e.clientX
-          this.global.y = e.clientY
-
-          const {left, top} = this.cvs.getBoundingClientRect();
-
-          //限制移动不能超出画布
-          (this.global.x < 173) ? this.global.ax = 75 : this.global.ax = 425;
-          (this.global.y < 148) ? this.global.ay = 50 : this.global.ay = 350;
-
-          (this.global.x < 425 && this.global.x > 75) ? this.global.x = e.clientX : this.global.x = this.global.ax;
-
-          (this.global.y > 50 && this.global.y < 350) ? this.global.y = e.clientY : this.global.y = this.global.ay
-
-          //先清除之前的然后重新绘制
-          this.ctx.clearRect(0, 0, this.cvs.width, this.cvs.height)
-          let imgObj = new Image()
-          imgObj.src = this.selectImgUrl
-          this.ctx.drawImage(imgObj, this.global.x - 75, this.global.y - 50, 150, 100)
-        }
-
-        this.cvs.onmouseup = () => {
-          this.cvs.onmousemove = null
-          this.cvs.onmouseup = null
-        }
-      }
-
+      // this.cvs = this.$el.querySelector('#cvs')
+      // this.ctx = this.cvs.getContext('2d')
+      this.cvs = new fabric.Canvas('cvs')
     },
     computed: {},
     methods: {
@@ -93,9 +63,14 @@
         this.selectImgUrl = url
       },
       confirmImg () {
-        let imgObj = new Image()
-        imgObj.src = this.selectImgUrl
-        this.ctx.drawImage(imgObj, 0, 0)
+
+        fabric.Image.fromURL(this.selectImgUrl, (oImg) => {
+          oImg.scale(0.5)//图片缩小10倍
+          this.cvs.add(oImg)
+        })
+        // let imgObj = new Image()
+        // imgObj.src = this.selectImgUrl
+        // this.ctx.drawImage(imgObj, 0, 0)
       },
       cancelImg () {
         this.selectImg = false
