@@ -55,10 +55,16 @@
         this.fabricCvs = new fabric.Canvas('jigsawCan')
         this.importImg()
 
-        // this.fabricCvs.on('mouse:dblclick', function(e) {
-        //   e.target.set('fill', 'red');
-        //   this.fabricCvs.renderAll();
-        // });
+        this.fabricCvs.on('mouse:dblclick', (e) => {
+          this.fabricCvs.remove(
+            this.fabricCvs.item(
+              this.fabricCvs.getObjects().indexOf(e.target)
+            )
+          )
+          // var p = this.fabricCvs.getPointer(e)
+          // this.fabricCvs.remove(this.fabricCvs.item(0))
+          // this.fabricCvs.renderAll()
+        })
       },
       clickImg (item) {
         item.selected = !item.selected
@@ -81,6 +87,14 @@
           oImg.scale(0.5)//图片缩小10倍
           this.fabricCvs.add(oImg)
         })
+        fabric.Image.fromURL('http://mczaiyun.top/imgControl/fight.png', (oImg) => {
+          oImg.scale(0.5)//图片缩小10倍
+          this.fabricCvs.add(oImg)
+        })
+        fabric.Image.fromURL('http://mczaiyun.top/imgControl/fight.png', (oImg) => {
+          oImg.scale(0.5)//图片缩小10倍
+          this.fabricCvs.add(oImg)
+        })
       },
       // 显示公共图库
       showCommonImgStoreModal () {
@@ -99,7 +113,8 @@
       },
       // 清屏
       reset () {
-        console.log(this.fabricCvs)
+        this.fabricCvs.getSelectionContext() // 获取选中的对象
+        this.fabricCvs.clear() // 清空所有内容
       },
       // 改变背景
       changeBG () {
