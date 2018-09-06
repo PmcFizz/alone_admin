@@ -10,6 +10,17 @@ export const loginRouter = {
   component: () => import('@/views/login.vue')
 }
 
+// 拼图
+export const jigsawRouter = {
+  path: '/jigsaw',
+  name: 'jigsaw',
+  access: 0,
+  meta: {
+    title: '拼图'
+  },
+  component: () => import('@/views/jigsaw.vue')
+}
+
 export const page404 = {
   path: '/*',
   name: 'error-404',
@@ -25,7 +36,7 @@ export const page403 = {
     title: '403-权限不足'
   },
   name: 'error-403',
-  component: () => import('@//views/error-page/403.vue')
+  component: () => import('@/views/error-page/403.vue')
 }
 
 export const page500 = {
@@ -34,7 +45,7 @@ export const page500 = {
     title: '500-服务端错误'
   },
   name: 'error-500',
-  component: () => import('@/views/error-page/500.vue')
+  component: () => import('@/views/jigsaw.vue')
 }
 
 export const locking = {
@@ -190,6 +201,7 @@ export const appRouter = [
 // 所有上面定义的路由都要写在下面的routers里
 export const routers = [
   loginRouter,
+  jigsawRouter,
   otherRouter,
   locking,
   ...appRouter,
