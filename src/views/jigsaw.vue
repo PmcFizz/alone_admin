@@ -22,6 +22,44 @@
                  :src="item.imgUrl"/>
         </Modal>
 
+        <Modal width='800px' v-model="importImgModal"
+               title="选择要导入的图片" @on-ok="submitUploadForm"
+               @on-cancel="hideImportImgModal">
+            <Row>
+                <Col span="12">
+                    <Form :model="uploadForm" :label-width="80">
+                        <FormItem label="Name:">
+                            <Input v-model="uploadForm.name" placeholder="Picture name..."></Input>
+                        </FormItem>
+                        <FormItem label="Store:">
+                            <Select v-model="uploadForm.store">
+                                <Option v-for="item in storeList" :value="item.value" :key="item.value">
+                                    {{ item.label }}
+                                </Option>
+                            </Select>
+                        </FormItem>
+                        <FormItem label="Describe:">
+                            <Input v-model="uploadForm.desc" type="textarea" :autosize="{minRows: 2,maxRows: 6}"
+                                   placeholder="Picture des..."></Input>
+                        </FormItem>
+                        <FormItem label="Picture:">
+                            <Upload multiple type="drag"
+                                    action="//jsonplaceholder.typicode.com/posts/">
+                                <div style="padding: 20px 0">
+                                    <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
+                                    <p>Click or drag files here to upload</p>
+                                </div>
+                            </Upload>
+                        </FormItem>
+                        <FormItem>
+                            <Button type="ghost" @click="resetUploadForm" style="margin-left: 8px">清空</Button>
+                        </FormItem>
+                    </Form>
+                </Col>
+            </Row>
+
+        </Modal>
+
     </div>
 </template>
 
@@ -33,19 +71,46 @@
         jigsawCan: null,
         jigsawCtx: null,
         fabricCvs: null,
-        commonImgStoreModal: false,
+        commonImgStoreModal: false, // 公共图片库模态框
+        importImgModal: false, // 导入图片模态框
         imgArr: [
           {imgUrl: 'http://mczaiyun.top/imgControl/bb9e.png', selected: false},
           {imgUrl: 'http://mczaiyun.top/imgControl/batman_tumbler.png', selected: false},
           {imgUrl: 'http://mczaiyun.top/imgControl/xinhe.png', selected: false},
           {imgUrl: 'http://mczaiyun.top/imgControl/fight.png', selected: false}
         ],
+        storeList: [{label: '仓库1', value: '1'}], // 仓库列表
+        uploadForm: {
+          name: '',
+          store: '',
+          desc: '',
+          pictureUrlArr: []
+        }
       }
     },
     mounted () {
       this.initData()
     },
     methods: {
+      // 清空上传文件表单
+      resetUploadForm () {
+        this.uploadForm.name = ''
+        this.uploadForm.store = ''
+        this.uploadForm.desc = ''
+        this.uploadForm.pictureUrlArr = []
+      },
+      // 提交上传文件表单
+      submitUploadForm () {
+
+      },
+      // 确定上传导入图片
+      confirmImportImg () {
+
+      },
+      // 隐藏上传导入模态框
+      hideImportImgModal () {
+        this.importImgModal = false
+      },
       initData () {
         const clientHeight = document.documentElement.scrollHeight
         const clientWidth = document.documentElement.scrollWidth
@@ -61,14 +126,12 @@
               this.fabricCvs.getObjects().indexOf(e.target)
             )
           )
-          // var p = this.fabricCvs.getPointer(e)
-          // this.fabricCvs.remove(this.fabricCvs.item(0))
-          // this.fabricCvs.renderAll()
         })
       },
       clickImg (item) {
         item.selected = !item.selected
       },
+      // 确定选中的图片
       confirmImg () {
         let selectedArr = this.imgArr.filter(item => {
           return item.selected
@@ -109,7 +172,7 @@
       },
       // 导入上传
       importUpload () {
-
+        this.importImgModal = true
       },
       // 清屏
       reset () {
