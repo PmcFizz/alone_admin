@@ -60,6 +60,25 @@
 
         </Modal>
 
+
+        <Modal width='400px' v-model="loginModal"
+               title="Login&Register" @on-ok="submitLoginForm"
+               @on-cancel="hideLoginModal">
+            <Row>
+                <Col span="12">
+                    <Form :model="loginForm" :label-width="80">
+                        <FormItem label="Name:">
+                            <Input v-model="loginForm.name" style="width: 250px" placeholder="Name..."></Input>
+                        </FormItem>
+                        <FormItem label="Password:">
+                            <Input v-model="loginForm.pwd" style="width: 250px" type="password"
+                                   placeholder="Password..."></Input>
+                        </FormItem>
+                    </Form>
+                </Col>
+            </Row>
+        </Modal>
+
     </div>
 </template>
 
@@ -73,6 +92,7 @@
         fabricCvs: null,
         commonImgStoreModal: false, // 公共图片库模态框
         importImgModal: false, // 导入图片模态框
+        loginModal: false, // 登录注册框
         imgArr: [
           {imgUrl: 'http://mczaiyun.top/imgControl/bb9e.png', selected: false},
           {imgUrl: 'http://mczaiyun.top/imgControl/batman_tumbler.png', selected: false},
@@ -85,6 +105,10 @@
           store: '',
           desc: '',
           pictureUrlArr: []
+        },
+        loginForm: {
+          name: '',
+          pwd: ''
         }
       }
     },
@@ -98,6 +122,14 @@
         this.uploadForm.store = ''
         this.uploadForm.desc = ''
         this.uploadForm.pictureUrlArr = []
+      },
+      // 提交登录表单
+      submitLoginForm () {
+
+      },
+      // 隐藏登录模态框
+      hideLoginModal () {
+        this.loginModal = false
       },
       // 提交上传文件表单
       submitUploadForm () {
@@ -192,11 +224,11 @@
       },
       // 显示私有图库
       showPrivateImgStoreModal () {
-
+        this.loginModal = true
       },
       // 显示我的设计
       showMyDesign () {
-
+        this.loginModal = true
       }
     }
   }
@@ -208,7 +240,7 @@
     .importImg {
         display: inline-block;
         margin: 10px;
-        width: 200px;
+        width: 100px;
         height: auto;
         &.selected {
             border: 2px solid #f90
