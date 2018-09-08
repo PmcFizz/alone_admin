@@ -10,11 +10,12 @@ import router from '../router'
 import axios from 'axios'
 
 import config from './config'
+
 var qs = require('qs')
 
 // axios默认配置请求的api基础地址
 axios.defaults.baseURL = (process.env.NODE_ENV !== 'production' ? config.dev.httpUrl : config.build.httpUrl)
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 axios.defaults.timeout = 30000 // 超时设置30s
 export default ((url = '', data = {}) => {
   return {
@@ -38,9 +39,9 @@ export default ((url = '', data = {}) => {
     },
     post (url, data, upload = false) {
       return new Promise((resolve, reject) => {
-        axios.post(url, upload ? data : qs.stringify(data), {
-          withCredentials: false,
-          headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+        axios.post(url, data, {
+          withCredentials: false
+          // headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
         }).then(function (response) {
           if (response.data.status === 1101) {
             router.push({path: '/login'})

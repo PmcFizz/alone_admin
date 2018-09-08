@@ -28,13 +28,13 @@
             <Row>
                 <Col span="12">
                     <Form :model="uploadForm" :label-width="80">
-                        <FormItem label="Name:">
-                            <Input v-model="uploadForm.name" placeholder="Picture name..."></Input>
-                        </FormItem>
+                        <!--<FormItem label="Name:">-->
+                        <!--<Input v-model="uploadForm.name" placeholder="Picture name..."></Input>-->
+                        <!--</FormItem>-->
                         <FormItem label="Store:">
-                            <Select v-model="uploadForm.store">
-                                <Option v-for="item in storeList" :value="item.value" :key="item.value">
-                                    {{ item.label }}
+                            <Select v-model="uploadForm.storeId">
+                                <Option v-for="item in storeArr" :value="item._id" :key="item._id">
+                                    {{ item.name }}
                                 </Option>
                             </Select>
                         </FormItem>
@@ -44,7 +44,9 @@
                         </FormItem>
                         <FormItem label="Picture:">
                             <Upload multiple type="drag"
-                                    action="//jsonplaceholder.typicode.com/posts/">
+                                    :on-success="uploadSuccess"
+                                    :format="['jpg','jpeg','png','gif']"
+                                    action="http://localhost:3000/base/uploadImgs">
                                 <div style="padding: 20px 0">
                                     <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
                                     <p>Click or drag files here to upload</p>
@@ -83,6 +85,8 @@
 </template>
 
 <script>
+  import { queryPicStore, pushImgToStore, getStoreImg } from '@/api/pictureStore'
+
   export default {
     name: 'jigsaw',
     data () {
@@ -102,20 +106,25 @@
         storeList: [{label: '仓库1', value: '1'}], // 仓库列表
         uploadForm: {
           name: '',
-          store: '',
+          storeId: '',
           desc: '',
           pictureUrlArr: []
         },
         loginForm: {
           name: '',
           pwd: ''
-        }
+        },
+        storeArr: [] // 图片库
       }
     },
     mounted () {
       this.initData()
     },
     methods: {
+      // 上传成功
+      uploadSuccess (response, file, fileList) {
+        this.uploadForm.pictureUrlArr.push(...response.data)
+      },
       // 清空上传文件表单
       resetUploadForm () {
         this.uploadForm.name = ''
@@ -133,7 +142,9 @@
       },
       // 提交上传文件表单
       submitUploadForm () {
-
+        pushImgToStore(this.uploadForm).then(res => {
+          console.log(this.uploadForm)
+        })
       },
       // 确定上传导入图片
       confirmImportImg () {
@@ -144,6 +155,10 @@
         this.importImgModal = false
       },
       initData () {
+        queryPicStore().then(res => {
+          this.storeArr = res.data
+          this.uploadForm.storeId = this.storeArr[0]._id
+        })
         const clientHeight = document.documentElement.scrollHeight
         const clientWidth = document.documentElement.scrollWidth
         this.jigsawCan = this.$el.querySelector('#jigsawCan')
@@ -193,10 +208,12 @@
       },
       // 显示公共图库
       showCommonImgStoreModal () {
-        this.imgArr.forEach(item => {
-          item.selected = false
+        getStoreImg({isCommon: true}).then(res => {
+          this.imgArr = res.data.pictureUrlArr.map(item => {
+            return {imgUrl: item, selected: false}
+          })
+          this.commonImgStoreModal = true
         })
-        this.commonImgStoreModal = true
       },
       // 隐藏公共图库
       hideCommonImgStoreModal () {
@@ -205,6 +222,7 @@
       // 导入上传
       importUpload () {
         this.importImgModal = true
+        this.uploadForm.pictureUrlArr = []
       },
       // 清屏
       reset () {
