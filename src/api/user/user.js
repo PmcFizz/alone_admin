@@ -20,3 +20,9 @@ export const userLogout = (data) => $http.post('/logout', data)
  * @param data
  */
 export const queryUserByPage = (data) => $http.post('/user/queryByPage', data)
+
+/**
+ * 用户注册并且登录
+ * @param data
+ */
+export const registerAndLogin = (data) => $http.post('/user/registerAndLogin', data)

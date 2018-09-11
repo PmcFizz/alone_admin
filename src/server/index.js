@@ -23,7 +23,7 @@ export default ((url = '', data = {}) => {
       return new Promise((resolve, reject) => {
         axios.get(url, {
           withCredentials: false,
-          params: data,
+          params: data
         }).then(function (response) {
           if (response.data.status === 1101) {
             router.push({path: '/login'})
@@ -37,7 +37,7 @@ export default ((url = '', data = {}) => {
         })
       })
     },
-    post (url, data, upload = false) {
+    post (url, data) {
       return new Promise((resolve, reject) => {
         axios.post(url, data, {
           withCredentials: false

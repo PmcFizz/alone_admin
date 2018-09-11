@@ -9,6 +9,7 @@
                 <li class="muen_item" @click="importUpload">导入上传</li>
                 <li class="muen_item" @click="reset">清 屏</li>
                 <li class="muen_item" @click="changeBG">改变背景</li>
+                <li class="muen_item" @click="saveMyDesign">保存拼图</li>
                 <li class="muen_item" @click="showPrivateImgStoreModal">我的图库</li>
                 <li class="muen_item" @click="showMyDesign">我的设计</li>
             </ul>
@@ -70,10 +71,10 @@
                 <Col span="12">
                     <Form :model="loginForm" :label-width="80">
                         <FormItem label="Name:">
-                            <Input v-model="loginForm.name" style="width: 250px" placeholder="Name..."></Input>
+                            <Input v-model="loginForm.nickName" style="width: 250px" placeholder="Name..."></Input>
                         </FormItem>
                         <FormItem label="Password:">
-                            <Input v-model="loginForm.pwd" style="width: 250px" type="password"
+                            <Input v-model="loginForm.password" style="width: 250px" type="password"
                                    placeholder="Password..."></Input>
                         </FormItem>
                     </Form>
@@ -86,6 +87,8 @@
 
 <script>
   import { queryPicStore, pushImgToStore, getStoreImg } from '@/api/pictureStore'
+  import { registerAndLogin } from '@/api/user/user'
+  import { createOne, queryMyDesign } from '@/api/design'
 
   export default {
     name: 'jigsaw',
@@ -114,7 +117,8 @@
           name: '',
           pwd: ''
         },
-        storeArr: [] // 图片库
+        storeArr: [], // 图片库
+        userId: null
       }
     },
     mounted () {
@@ -134,7 +138,11 @@
       },
       // 提交登录表单
       submitLoginForm () {
-
+        registerAndLogin(this.loginForm).then(res => {
+          if (res.code === 200) {
+            localStorage.setItem('userId', res.data.userId)
+          }
+        })
       },
       // 隐藏登录模态框
       hideLoginModal () {
@@ -155,6 +163,7 @@
         this.importImgModal = false
       },
       initData () {
+        this.userId = localStorage.getItem('userId')
         queryPicStore().then(res => {
           this.storeArr = res.data
           this.uploadForm.storeId = this.storeArr[0]._id
@@ -165,7 +174,7 @@
         this.jigsawCan.setAttribute('width', clientWidth - 10)
         this.jigsawCan.setAttribute('height', clientHeight - 10)
         this.fabricCvs = new fabric.Canvas('jigsawCan')
-        this.importImg()
+        // this.importImg()
 
         this.fabricCvs.on('mouse:dblclick', (e) => {
           this.fabricCvs.remove(
@@ -235,10 +244,24 @@
         this.fabricCvs.setBackgroundColor({
           source: 'http://fabricjs.com/assets/escheresque_ste.png'
         }, this.fabricCvs.renderAll.bind(this.fabricCvs))
-
-        // 设置背景颜色
-        // this.fabricCvs.setBackgroundColor('rgba(255, 73, 64, 0.6)', this.fabricCvs.renderAll.bind(this.fabricCvs))
-
+      },
+      // 保存我的设计
+      saveMyDesign () {
+        if (this.userId) {
+          let sendData = {
+            name: +new Date(),
+            createUserId: this.userId,
+            content: this.fabricCvs,
+            imgLink: ''
+          }
+          createOne(sendData).then(res => {
+            if (res.code === 200) {
+              alert('保存成功!')
+            }
+          })
+        } else {
+          this.loginModal = true
+        }
       },
       // 显示私有图库
       showPrivateImgStoreModal () {
@@ -246,7 +269,13 @@
       },
       // 显示我的设计
       showMyDesign () {
-        this.loginModal = true
+        if (this.userId) {
+          queryMyDesign().then(res => {
+            this.fabricCvs.loadFromJSON(JSON.stringify(res.data[0].content))
+          })
+        } else {
+          this.loginModal = true
+        }
       }
     }
   }
