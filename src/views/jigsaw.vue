@@ -197,7 +197,8 @@
           fabric.Image.fromURL(selectedArr[i].imgUrl, (oImg) => {
             oImg.scale(0.5)//图片缩小10倍
             this.fabricCvs.add(oImg)
-          })
+          }, {crossOrigin: 'anonymous'})
+          // {crossOrigin: 'anonymous'} 允许跨域加载图片 不加转化为img时报错
         }
       },
       // 导入一个图片
@@ -247,12 +248,16 @@
       },
       // 保存我的设计
       saveMyDesign () {
+        var imgdata = this.fabricCvs.toDataURL({
+          format: 'jpeg',
+          quality: 0.4
+        })
         if (this.userId) {
           let sendData = {
             name: +new Date(),
             createUserId: this.userId,
             content: this.fabricCvs,
-            imgLink: ''
+            imgLink: imgdata
           }
           createOne(sendData).then(res => {
             if (res.code === 200) {
