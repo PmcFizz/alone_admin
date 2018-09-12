@@ -298,4 +298,8 @@
             border: 2px solid #f90
         }
     }
+    .ivu-modal-body{
+        max-height: 500px;
+        overflow-y: scroll;
+    }
 </style>
