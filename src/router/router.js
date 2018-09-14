@@ -195,6 +195,23 @@ export const appRouter = [
         access: 0,
         component: () => import('@/views/img-control/baseImgControl.vue')
       }]
+  },
+  {
+    path: '/studyExample',
+    name: 'studyExample',
+    icon: 'android-checkbox',
+    title: '练习案例',
+    access: 0,
+    component: Main,
+    children: [
+      {
+        path: 'menu-dynamic',
+        title: '菜单粘合',
+        name: 'menu-dynamic',
+        access: 0,
+        component: () => import('@/views/study-example/menu-dynamic.vue')
+      }
+    ]
   }
 ]
 

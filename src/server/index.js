@@ -11,8 +11,6 @@ import axios from 'axios'
 
 import config from './config'
 
-var qs = require('qs')
-
 // axios默认配置请求的api基础地址
 axios.defaults.baseURL = (process.env.NODE_ENV !== 'production' ? config.dev.httpUrl : config.build.httpUrl)
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'

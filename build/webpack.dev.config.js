@@ -22,7 +22,7 @@ module.exports = merge(webpackBaseConfig, {
     hot: true,
     compress: true,
     host: 'localhost',
-    port: 8083,
+    port: 8088,
     open: config.dev.autoOpenBrowser,
     overlay: config.dev.errorOverlay
       ? {warnings: false, errors: true}
