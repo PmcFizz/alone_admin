@@ -210,6 +210,13 @@ export const appRouter = [
         name: 'menu-dynamic',
         access: 0,
         component: () => import('@/views/study-example/menu-dynamic.vue')
+      },
+      {
+        path: 'hover',
+        title: 'hover',
+        name: 'hover',
+        access: 0,
+        component: () => import('@/views/study-example/hover.vue')
       }
     ]
   }
