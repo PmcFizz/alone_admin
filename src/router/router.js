@@ -217,6 +217,13 @@ export const appRouter = [
         name: 'hover',
         access: 0,
         component: () => import('@/views/study-example/hover.vue')
+      },
+      {
+        path: 'dashed',
+        title: 'dashed',
+        name: 'dashed',
+        access: 0,
+        component: () => import('@/views/study-example/dashed.vue')
       }
     ]
   }
