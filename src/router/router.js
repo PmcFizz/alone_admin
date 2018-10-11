@@ -74,124 +74,167 @@ export const otherRouter = {
 // 作为Main组件的子页面展示并且在左侧菜单显示的路由写在appRouter里
 export const appRouter = [
   {
-    path: '/user-manage',
+    path: '/send-message',
     icon: 'android-checkbox',
     name: 'user',
-    title: '用户管理',
+    title: '发短信',
     access: 0,
     component: Main,
     children: [
       {
-        path: 'index',
-        title: '用户管理',
-        name: 'user-manage',
+        path: 'send',
+        title: '发短信',
+        name: 'send',
+        access: 0,
+        component: () => import('@/views/user/user-manage.vue')
+      },
+      {
+        path: 'loop-send',
+        title: '循环发送',
+        name: 'loopSend',
+        access: 0,
+        component: () => import('@/views/user/user-manage.vue')
+      },
+      {
+        path: 'often-message',
+        title: '常用短信',
+        name: 'oftenMessage',
+        access: 0,
+        component: () => import('@/views/user/user-manage.vue')
+      },
+      {
+        path: 'message-draft',
+        title: '短信草稿',
+        name: 'messageDraft',
         access: 0,
         component: () => import('@/views/user/user-manage.vue')
       }
     ]
   },
   {
-    path: '/company-manage',
+    path: '/customization-manage',
     icon: 'android-checkbox',
-    name: 'company',
-    title: '公司管理',
+    name: 'customization',
+    title: '定制短信',
     access: 0,
     component: Main,
     children: [
       {
-        path: 'list',
-        title: '公司列表',
-        name: 'company-list',
+        path: 'point-point',
+        title: '普通点对点',
+        name: 'pointPoint',
         access: 0,
         component: () => import('@/views/company/company-list.vue')
-      }]
+      },
+      {
+        path: 'excel-model-one',
+        title: 'excel模板1',
+        name: 'excelModelOne',
+        access: 0,
+        component: () => import('@/views/company/company-list.vue')
+      },
+      {
+        path: 'excel-model-two',
+        title: 'excel模板2',
+        name: 'excelModelTwo',
+        access: 0,
+        component: () => import('@/views/company/company-list.vue')
+      }
+    ]
   },
   {
-    path: '/needs',
+    path: '/message-manage',
     icon: 'android-checkbox',
-    name: 'needs-manage',
-    title: '需求管理',
+    name: 'messageManage',
+    title: '短信管理',
     access: 0,
     component: Main,
     children: [
       {
-        path: 'list',
-        title: '全部需求列表',
-        name: 'needs-list',
+        path: 'send-list',
+        title: '发送列表',
+        name: 'list',
         access: 0,
         component: () => import('@/views/needs-manage/needs-list.vue')
       }, {
-        path: 'create',
-        title: '创建需求',
-        name: 'create-needs',
-        access: 0,
-        component: () => import('@/views/needs-manage/create-needs.vue')
-      }, {
-        path: 'my-create',
-        title: '我的需求列表',
-        name: 'my-needs',
+        path: 'my-finish',
+        title: '我的已完成',
+        name: 'myFinish',
         access: 0,
         component: () => import('@/views/needs-manage/my-needs.vue')
-      }]
+      }, {
+        path: 'customer-finish',
+        title: '客户已完成',
+        name: 'customerFinish',
+        access: 0,
+        component: () => import('@/views/needs-manage/my-needs.vue')
+      }, {
+        path: 'loop-message',
+        title: '循环短信',
+        name: 'loopMessage',
+        access: 0,
+        component: () => import('@/views/needs-manage/my-needs.vue')
+      }
+    ]
   },
   {
-    path: '/qualityControl',
+    path: '/report',
     icon: 'android-checkbox',
     name: 'qualityControl',
-    title: '质检产品模板',
+    title: '充值消费',
     access: 0,
     component: Main,
     children: [
       {
-        path: 'base-model',
-        title: '基础模板管理',
-        name: 'base-model',
+        path: 'customer-consume-record',
+        title: '客户消费记录',
+        name: 'customerConsume',
         access: 0,
         component: () => import('@/views/qualityControl/base-model.vue')
       }, {
-        path: 'define-model',
-        title: '自定义模板',
-        name: 'define-model',
+        path: 'customer-consume-statistics',
+        title: '客户消费统计',
+        name: 'customerStatistics',
         access: 0,
         component: () => import('@/views/qualityControl/define-model.vue')
       }, {
-        path: 'products',
-        title: '产品列表',
-        name: 'products',
+        path: 'my-consume-record',
+        title: '我的消费记录',
+        name: 'myConsume',
         access: 0,
         component: () => import('@/views/qualityControl/products.vue')
       }, {
-        path: 'product-model',
-        title: '产品模板',
-        name: 'product-model',
+        path: 'customer-consume-statistics',
+        title: '我的消费统计',
+        name: 'myStatistics',
         access: 0,
         component: () => import('@/views/qualityControl/product-model.vue')
       }]
   },
   {
-    path: '/imgControl',
+    path: '/customer',
     icon: 'android-checkbox',
-    name: 'imgControl',
-    title: '图片控制',
+    name: 'customer',
+    title: '客户管理',
     access: 0,
     component: Main,
     children: [
       {
-        path: 'base-img-control',
-        title: '基本图片编辑',
-        name: 'baseImgControl',
+        path: 'customer-manage',
+        title: '客户管理',
+        name: 'customerManage',
         access: 0,
         component: () => import('@/views/img-control/baseImgControl.vue')
       }, {
-        path: 'middle-img-control',
-        title: '中级图片编辑',
-        name: 'middleImgControl',
-        access: 0,
-        component: () => import('@/views/img-control/baseImgControl.vue')
-      }, {
-        path: 'high-img-control',
-        title: '高级图片编辑',
+        path: 'my-info',
+        title: '我的信息',
         name: 'highImgControl',
+        access: 0,
+        component: () => import('@/views/img-control/baseImgControl.vue')
+      }, {
+        path: 'address-book',
+        title: '通讯录',
+        name: 'addressBook',
         access: 0,
         component: () => import('@/views/img-control/baseImgControl.vue')
       }]
@@ -200,7 +243,7 @@ export const appRouter = [
     path: '/studyExample',
     name: 'studyExample',
     icon: 'android-checkbox',
-    title: '练习案例',
+    title: '系统管理',
     access: 0,
     component: Main,
     children: [
