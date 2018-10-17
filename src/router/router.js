@@ -21,6 +21,17 @@ export const jigsawRouter = {
   component: () => import('@/views/jigsaw.vue')
 }
 
+// 图表
+export const chartRouter = {
+  path: '/chart',
+  name: 'chart',
+  access: 0,
+  meta: {
+    title: '图表'
+  },
+  component: () => import('@/views/chart/chart.vue')
+}
+
 export const page404 = {
   path: '/*',
   name: 'error-404',
@@ -276,6 +287,7 @@ export const appRouter = [
 export const routers = [
   loginRouter,
   jigsawRouter,
+  chartRouter,
   otherRouter,
   locking,
   ...appRouter,
