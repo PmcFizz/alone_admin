@@ -148,24 +148,6 @@ export const appRouter = [
         name: 'base-model',
         access: 0,
         component: () => import('@/views/qualityControl/base-model.vue')
-      }, {
-        path: 'define-model',
-        title: '自定义模板',
-        name: 'define-model',
-        access: 0,
-        component: () => import('@/views/qualityControl/define-model.vue')
-      }, {
-        path: 'products',
-        title: '产品列表',
-        name: 'products',
-        access: 0,
-        component: () => import('@/views/qualityControl/products.vue')
-      }, {
-        path: 'product-model',
-        title: '产品模板',
-        name: 'product-model',
-        access: 0,
-        component: () => import('@/views/qualityControl/product-model.vue')
       }]
   },
   {
@@ -180,18 +162,6 @@ export const appRouter = [
         path: 'base-img-control',
         title: '基本图片编辑',
         name: 'baseImgControl',
-        access: 0,
-        component: () => import('@/views/img-control/baseImgControl.vue')
-      }, {
-        path: 'middle-img-control',
-        title: '中级图片编辑',
-        name: 'middleImgControl',
-        access: 0,
-        component: () => import('@/views/img-control/baseImgControl.vue')
-      }, {
-        path: 'high-img-control',
-        title: '高级图片编辑',
-        name: 'highImgControl',
         access: 0,
         component: () => import('@/views/img-control/baseImgControl.vue')
       }]
