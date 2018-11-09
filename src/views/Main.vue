@@ -33,7 +33,8 @@
                     </div>
                 </div>
                 <div class="header-avator-con">
-                    <Button @click="toJigsaw">拼图</Button>
+                    <Button @click="toNewPage('/jigsaw')">拼图</Button>
+                    <Button @click="toNewPage('/chart')">图表</Button>
                     <full-screen v-model="isFullScreen" @on-change="fullscreenChange"></full-screen>
                     <lock-screen></lock-screen>
 
@@ -121,9 +122,8 @@
       }
     },
     methods: {
-      // 前往拼图页面
-      toJigsaw () {
-        this.$router.push({'path': '/jigsaw'})
+      toNewPage (path) {
+        this.$router.push({path})
       },
       init () {
         let pathArr = util.setCurrentPath(this, this.$route.name)
