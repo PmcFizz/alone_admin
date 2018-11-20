@@ -23,6 +23,8 @@ npm run build
 用户详情,任职历史
 公司管理
 公司评价管理
+拼图游戏
+动态菜单
 
 ## 内容截图
 <img width="600" src="./src/images/sj_showtime/login.png" />
