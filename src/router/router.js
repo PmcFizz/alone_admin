@@ -178,6 +178,22 @@ export const appRouter = [
       }]
   },
   {
+    path: '/jspdf',
+    icon: 'android-checkbox',
+    name: 'jspdf',
+    title: 'js操作PDF',
+    access: 0,
+    component: Main,
+    children: [
+      {
+        path: 'index',
+        title: 'js操作PDF-基本',
+        name: 'index',
+        access: 0,
+        component: () => import('@/views/jspdf/index.vue')
+      }]
+  },
+  {
     path: '/studyExample',
     name: 'studyExample',
     icon: 'android-checkbox',

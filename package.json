@@ -28,6 +28,7 @@
     "iview": "^2.8.0",
     "iview-area": "^1.5.16",
     "js-cookie": "^2.2.0",
+    "jspdf": "^1.4.1",
     "rasterizehtml": "^1.2.4",
     "simplemde": "^1.11.2",
     "sortablejs": "^1.7.0",
