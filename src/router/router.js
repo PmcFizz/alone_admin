@@ -202,6 +202,13 @@ export const appRouter = [
     component: Main,
     children: [
       {
+        path: 'avatar',
+        title: '编辑头像',
+        name: 'avatar',
+        access: 0,
+        component: () => import('@/views/study-example/avatar.vue')
+      },
+      {
         path: 'menu-dynamic',
         title: '菜单粘合',
         name: 'menu-dynamic',
