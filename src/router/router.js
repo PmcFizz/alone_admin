@@ -228,6 +228,13 @@ export const appRouter = [
         name: 'dashed',
         access: 0,
         component: () => import('@/views/study-example/dashed.vue')
+      },
+      {
+        path: 'richEdit',
+        title: '富文本编辑',
+        name: 'richEdit',
+        access: 0,
+        component: () => import('@/views/study-example/richEdit.vue')
       }
     ]
   }
