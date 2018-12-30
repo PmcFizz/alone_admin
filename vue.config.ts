@@ -43,12 +43,12 @@ module.exports = {
     // 配置多个代理
     proxy: {
       "/api": {
-        target: "<url>",
+        target: "http://192.168.16.214:6026",
         ws: true,
         changeOrigin: true
       },
       "/foo": {
-        target: "<other_url>"
+        target: "http://192.168.16.214:6026"
       }
     }
   }
