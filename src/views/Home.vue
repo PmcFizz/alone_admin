@@ -1,6 +1,8 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
+    <el-radio v-model="radio" label="1">备选项1</el-radio>
+    <el-radio v-model="radio" label="2">备选项2</el-radio>
     <Wxdl v-for="(item,index) in myMsg" :key="index" :item="item"></Wxdl>
   </div>
 </template>
@@ -16,6 +18,7 @@ import Wxdl from '@/components/Wxdl.vue'
     }
   })
 export default class Home extends Vue {
+    radio = '1'
     myMsg = [
       { title: '议对', content: '议惟畴政，名实相课。断理必刚，攡辞无懦。对策王庭，同时酌和。治体高秉，雅谟远播。' },
       { title: '丽辞', content: '体植必两，辞动有配。左提右挈，精味兼载。炳烁联华，镜静含态。玉润双流，如彼珩珮。' },
